@@ -1,132 +1,36 @@
 <!doctype html>
 <html lang="en" data-tenant="kilhaven" data-state="first-scan">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171714">
-  <title>Product Record | DenebTrack</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/denebtrack.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171713"><title>Product Record | DenebTrack</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="css/denebtrack.css">
 </head>
 <body>
-  <main>
-    <section class="dt-hero">
-      <div class="container dt-container">
-        <div class="dt-brand-row">
-          <div class="dt-tenant-mark" aria-label="Kilhaven">KILHAVEN</div>
-          <span class="dt-record-label">PRODUCT RECORD</span>
-        </div>
-        <div class="dt-hero-copy">
-          <p class="dt-eyebrow">Kilhaven 18 Year Old</p>
-          <div class="dt-unit-wrap">
-            <span class="dt-unit-number">871</span>
-            <span class="dt-unit-total">/ 2400</span>
-          </div>
-          <p class="dt-unit-caption">Individual unit number</p>
-          <div class="dt-verified">
-            <span class="dt-punch" aria-hidden="true">●</span>
-            <span>This product record matches a registered unit.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dt-content">
-      <div class="container dt-container">
-        <div class="dt-ack" data-show="returning-scan">
-          <span>Previously viewed</span>
-          <span aria-hidden="true">·</span>
-          <span>This unit record has been seen before.</span>
-        </div>
-
-        <section class="dt-section dt-identity">
-          <div class="dt-section-heading">
-            <p class="dt-kicker">Product identity</p>
-            <h1>Kilhaven 18 Year Old Single Malt</h1>
-          </div>
-          <div class="row g-0 dt-facts">
-            <div class="col-6 col-md-4 dt-fact"><span>Batch</span><strong>KH18-24B</strong></div>
-            <div class="col-6 col-md-4 dt-fact"><span>Origin</span><strong>Scotland</strong></div>
-            <div class="col-6 col-md-4 dt-fact"><span>Bottled</span><strong>June 2026</strong></div>
-            <div class="col-6 col-md-4 dt-fact"><span>Alcohol</span><strong>46% ABV</strong></div>
-            <div class="col-6 col-md-4 dt-fact"><span>Cask</span><strong>Sherry Oak</strong></div>
-            <div class="col-6 col-md-4 dt-fact"><span>Release</span><strong>2026</strong></div>
-          </div>
-        </section>
-
-        <section class="dt-section dt-story" data-hide="needs-checking,code-not-found">
-          <p class="dt-kicker">The record</p>
-          <h2>Made with time, place and care.</h2>
-          <p>Kilhaven 18 Year Old is matured in sherry oak and bottled in small release quantities. This record connects the individual bottle to its registered production information.</p>
-        </section>
-
-        <section class="dt-section dt-provenance" data-hide="needs-checking,code-not-found">
-          <div class="dt-section-heading">
-            <p class="dt-kicker">Provenance</p>
-            <h2>Registered details</h2>
-          </div>
-          <div class="dt-provenance-list">
-            <div><span>Production</span><strong>Kilhaven Distillery</strong></div>
-            <div><span>Country</span><strong>Scotland</strong></div>
-            <div><span>Record registered</span><strong>12 June 2026</strong></div>
-          </div>
-        </section>
-
-        <section class="dt-checking dt-section" data-state-only="needs-checking">
-          <p class="dt-kicker">Help us check the record</p>
-          <h2>A few details will help us review this unit.</h2>
-          <p class="dt-muted">Please tell us where the product was purchased. These details help us keep the product record accurate.</p>
-          <form class="row g-3" onsubmit="return false">
-            <div class="col-12 col-md-6"><label for="purchase">Where was it purchased?</label><input id="purchase" class="form-control" type="text" placeholder="Shop, website or seller"></div>
-            <div class="col-12 col-md-6"><label for="city">City</label><input id="city" class="form-control" type="text"></div>
-            <div class="col-12"><label for="email">Email</label><input id="email" class="form-control" type="email" placeholder="name@example.com"></div>
-            <div class="col-12"><label for="seal">Seal photo <span>(optional)</span></label><input id="seal" class="form-control" type="file" accept="image/*"></div>
-            <div class="col-12"><button class="btn dt-button" type="submit">Send details</button></div>
-          </form>
-        </section>
-
-        <section class="dt-not-found dt-section" data-state-only="code-not-found">
-          <p class="dt-kicker">No record found</p>
-          <h2>We could not find a record for this code.</h2>
-          <p>This does not tell us anything about the product itself. The label may be worn, the code may contain a typing error, or the product may not yet be registered.</p>
-          <p class="dt-muted">If you can, tell us where the product was purchased and we will review the details.</p>
-          <form class="row g-3" onsubmit="return false">
-            <div class="col-12 col-md-6"><label for="nf-purchase">Where was it purchased?</label><input id="nf-purchase" class="form-control" type="text"></div>
-            <div class="col-12 col-md-6"><label for="nf-city">City</label><input id="nf-city" class="form-control" type="text"></div>
-            <div class="col-12"><label for="nf-email">Email</label><input id="nf-email" class="form-control" type="email"></div>
-            <div class="col-12"><button class="btn dt-button" type="submit">Send details</button></div>
-          </form>
-        </section>
-      </div>
-    </section>
-
-    <div class="dt-test-banner" data-state-only="test-record">TEST RECORD · NOT A LIVE UNIT</div>
-
-    <footer class="dt-footer">
-      <div class="container dt-container">
-        <p>This record is held by <strong>DenebTrack</strong> independently of the brand.</p>
-        <p class="dt-footer-small">DenebTrack keeps the record of this unit and provides the verification service.</p>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    (() => {
-      const params = new URLSearchParams(location.search);
-      const state = params.get('state') || document.documentElement.dataset.state || 'first-scan';
-      const tenant = params.get('tenant') || document.documentElement.dataset.tenant || 'kilhaven';
-      document.documentElement.dataset.state = state;
-      document.documentElement.dataset.tenant = tenant;
-      document.querySelectorAll('[data-state-only]').forEach(el => {
-        el.hidden = !el.dataset.stateOnly.split(',').includes(state);
-      });
-      document.querySelectorAll('[data-show]').forEach(el => {
-        el.hidden = !el.dataset.show.split(',').includes(state);
-      });
-      document.querySelectorAll('[data-hide]').forEach(el => {
-        el.hidden = el.dataset.hide.split(',').includes(state);
-      });
-    })();
-  </script>
-</body>
-</html>
+<div id="testBanner" class="dt-test-banner" hidden>TEST RECORD · NOT A LIVE UNIT</div>
+<header class="dt-hero"><div class="container dt-container"><div class="dt-brand-row"><div id="tenantMark" class="dt-tenant-mark">KILHAVEN</div><div class="dt-record-label">PRODUCT RECORD</div></div><div class="dt-hero-copy"><p class="dt-eyebrow">Verified product record</p><div id="heroUnit" class="dt-unit-wrap"><span id="unitNumber" class="dt-unit-number">871</span><span id="unitTotal" class="dt-unit-total">/ 2400</span></div><p id="unitCaption" class="dt-unit-caption">Unit number recorded for this product.</p><div class="dt-verified"><span class="dt-punch" aria-hidden="true">•</span><span id="statusText">Record matched to this product.</span></div></div></div></header>
+<main class="dt-content"><div class="container dt-container">
+<div id="ack" class="dt-ack" hidden>✓ This unit has been seen before. The product record remains unchanged.</div>
+<section id="identity" class="dt-section"><p class="dt-kicker">Product identity</p><h1 id="productName">Single Malt Whisky</h1><div class="row dt-facts" id="facts"></div></section>
+<section id="story" class="dt-section dt-story"><div class="row g-5"><div class="col-lg-4"><p class="dt-kicker">About the product</p></div><div class="col-lg-8"><h2 id="storyTitle">Made with time, place and care.</h2><p id="storyBody">This record connects the physical unit with the product information supplied by the brand. It is designed to help you understand what you have in hand.</p></div></div></section>
+<section id="provenance" class="dt-section"><p class="dt-kicker">Provenance</p><div id="provenanceList" class="dt-provenance-list"></div></section>
+<section id="checking" class="dt-section dt-checking" hidden><p class="dt-kicker">A few details</p><h2 id="checkingTitle">A few details will help us review this unit.</h2><p class="dt-muted mb-4">Please tell us where you purchased it. These details help us keep the product record complete.</p><form id="checkForm"><div class="mb-3"><label for="purchase">Where did you purchase this product?</label><input id="purchase" class="form-control" required></div><div class="mb-3"><label for="city">City</label><input id="city" class="form-control" required></div><div class="mb-3"><label for="email">Email <span>(optional)</span></label><input id="email" type="email" class="form-control"></div><div class="mb-4"><label for="seal">Photo of the seal <span>(optional)</span></label><input id="seal" type="file" accept="image/*" class="form-control"></div><button class="btn dt-button" type="submit">Submit details</button></form></section>
+<section id="notFound" class="dt-section dt-not-found" hidden><p class="dt-kicker">Product record</p><h2>No record was found for this code.</h2><p class="dt-muted">This does not by itself mean the product is not genuine. A worn label, a typing error, or a record that has not yet been released can have the same result.</p><form id="notFoundForm" class="mt-4"><div class="mb-3"><label for="nfPurchase">Where did you purchase this product?</label><input id="nfPurchase" class="form-control" required></div><div class="mb-3"><label for="nfCity">City</label><input id="nfCity" class="form-control" required></div><div class="mb-4"><label for="nfEmail">Email <span>(optional)</span></label><input id="nfEmail" type="email" class="form-control"></div><button class="btn dt-button" type="submit">Submit details</button></form></section>
+<section id="submitted" class="dt-section" hidden><p class="dt-kicker">Thank you</p><h2>Your details have been submitted.</h2><p class="dt-muted">We have received the information you provided. You can close this page.</p></section>
+</div></main>
+<footer class="dt-footer"><div class="container dt-container"><p>Product records are held by DenebTrack independently of the brand.</p><p class="dt-footer-small">DenebTrack is the independent record keeper for this product record.</p></div></footer>
+<script>
+const p=new URLSearchParams(location.search), state=p.get('state')||'first-scan', tenant=p.get('tenant')||'kilhaven';
+document.documentElement.dataset.tenant=tenant;
+const $=id=>document.getElementById(id);
+const isCheck=['needs-checking','too-many-scans'].includes(state), isNF=state==='code-not-found', isReturning=state==='returning-scan', isTest=state==='test-record', isSubmitted=state==='check-submitted';
+if(tenant==='vantek'){ $('tenantMark').textContent='VANTEK'; $('productName').textContent='Engine Lubricant'; $('storyTitle').textContent='Precision for demanding equipment.'; $('storyBody').textContent='This record connects the physical unit with the product information supplied by Vantek Lubricants.'; $('unitNumber').textContent='318'; $('unitTotal').textContent='/ 1800'; }
+$('facts').innerHTML=(tenant==='vantek'?[['Product','Engine Lubricant'],['Grade','SAE 5W-30'],['Batch','VK-25-041'],['Pack size','1 L'],['Manufactured','2026-08-12'],['Origin','Singapore']]:[['Product','Single Malt Whisky'],['Age statement','12 years'],['Batch','KH-26-0871'],['Bottle size','700 ml'],['Bottled','2026-07-18'],['Origin','Kilhaven Estate']]).map(x=>`<div class="col-6 col-lg-4 dt-fact"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('');
+$('provenanceList').innerHTML='<div><span>Record created</span><strong>18 July 2026</strong></div><div><span>Record source</span><strong>Brand product registry</strong></div><div><span>Record keeper</span><strong>DenebTrack</strong></div>';
+if(isReturning){$('ack').hidden=false;$('statusText').textContent='Record matched to this product.';}
+if(isCheck){$('checking').hidden=false;$('checkingTitle').textContent=state==='too-many-scans'?'A few details will help us review this unit.':'A few details will help us review this unit.';$('story').hidden=true;$('provenance').hidden=true;}
+if(isNF){document.querySelector('.dt-hero').classList.add('dt-neutral-hero');$('heroUnit').hidden=true;$('unitCaption').hidden=true;$('statusText').textContent='No product record was found for this code.';$('identity').hidden=true;$('story').hidden=true;$('provenance').hidden=true;$('notFound').hidden=false;}
+if(isTest){$('testBanner').hidden=false;}
+if(isSubmitted){$('heroUnit').hidden=true;$('unitCaption').hidden=true;$('statusText').textContent='Your information has been received.';$('identity').hidden=true;$('story').hidden=true;$('provenance').hidden=true;$('submitted').hidden=false;}
+$('checkForm').addEventListener('submit',e=>{e.preventDefault();location.search='?state=check-submitted'+(tenant==='vantek'?'&tenant=vantek':'');});
+$('notFoundForm').addEventListener('submit',e=>{e.preventDefault();location.search='?state=check-submitted'+(tenant==='vantek'?'&tenant=vantek':'');});
+</script>
+</body></html>
