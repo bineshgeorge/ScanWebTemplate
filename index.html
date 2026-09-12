@@ -1,167 +1,18 @@
 <!doctype html>
 <html lang="en" data-tenant="kilhaven">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#10110f">
-  <meta name="description" content="Consumer product verification record">
-  <title>Product Verification | Zareeva Track</title>
-  <link rel="stylesheet" href="css/denebtrack.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#171813"><meta name="description" content="Consumer product verification record"><title>Product Verification | Zareeva Track</title><link rel="stylesheet" href="css/denebtrack.css"></head>
 <body>
-  <div id="testBanner" class="test-banner" hidden><span>TEST RECORD</span> This is not a live product unit.</div>
-
-  <header class="hero">
-    <div class="shell">
-      <div class="topbar">
-        <div class="brand" id="tenantMark">KILHAVEN</div>
-        <div class="record-type">PRODUCT VERIFICATION</div>
-      </div>
-
-      <div class="hero-content">
-        <div class="eyebrow">Product record</div>
-        <div class="hero-title-row">
-          <div>
-            <h1 id="heroTitle">This product is in the registry.</h1>
-            <p id="heroLead" class="hero-lead">The code you scanned matches a registered product unit.</p>
-          </div>
-          <div id="statusMark" class="status-mark" aria-label="Verification status">✓</div>
-        </div>
-        <div id="heroUnit" class="unit-lockup" aria-label="Unit number">
-          <span id="unitNumber">871</span><small id="unitTotal">/ 2400</small>
-        </div>
-        <p id="unitCaption" class="unit-caption">Unit number recorded for this product.</p>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="shell">
-      <div id="ack" class="ack" hidden><span>✓</span> This unit has been seen before. The product record remains unchanged.</div>
-
-      <section id="identity" class="section identity-section">
-        <div class="section-label">Product identity</div>
-        <div class="identity-head">
-          <div><h2 id="productName">Single Malt Whisky</h2><p id="productDescriptor">A registered individual product unit.</p></div>
-          <div id="scanState" class="state-chip">MATCHED</div>
-        </div>
-        <div id="facts" class="facts"></div>
-      </section>
-
-      <section id="story" class="section story-section">
-        <div class="section-label">About the product</div>
-        <div>
-          <h2 id="storyTitle">Made with time, place and care.</h2>
-          <p id="storyBody">This record connects the physical unit with product information supplied by the brand. It helps you understand what you have in hand and gives you a clear record of the unit you scanned.</p>
-        </div>
-      </section>
-
-      <section id="provenance" class="section provenance-section">
-        <div class="section-label">Record details</div>
-        <div id="provenanceList" class="provenance-list"></div>
-      </section>
-
-      <section id="checking" class="section action-section" hidden>
-        <div class="section-label">Review requested</div>
-        <div class="action-copy">
-          <h2 id="checkingTitle">We need a little more information about this unit.</h2>
-          <p id="checkingBody">The scan has been recorded, but a few details will help us review the unit. This does not by itself mean the product is not genuine.</p>
-        </div>
-        <form id="checkForm" class="consumer-form">
-          <div class="field"><label for="purchase">Where did you purchase this product?</label><input id="purchase" autocomplete="organization" required></div>
-          <div class="field"><label for="city">City</label><input id="city" autocomplete="address-level2" required></div>
-          <div class="field"><label for="email">Email <span>(optional)</span></label><input id="email" type="email" autocomplete="email"></div>
-          <div class="field"><label for="seal">Photo of the seal <span>(optional)</span></label><input id="seal" type="file" accept="image/*"></div>
-          <button class="primary-button" type="submit">Send details</button>
-        </form>
-      </section>
-
-      <section id="notFound" class="section action-section" hidden>
-        <div class="section-label">Product record</div>
-        <div class="action-copy">
-          <h2>No product record was found for this code.</h2>
-          <p>A missing record does not by itself mean the product is not genuine. A damaged label, an incorrect scan, or a product that has not yet been released can have the same result.</p>
-        </div>
-        <form id="notFoundForm" class="consumer-form">
-          <div class="field"><label for="nfPurchase">Where did you purchase this product?</label><input id="nfPurchase" autocomplete="organization" required></div>
-          <div class="field"><label for="nfCity">City</label><input id="nfCity" autocomplete="address-level2" required></div>
-          <div class="field"><label for="nfEmail">Email <span>(optional)</span></label><input id="nfEmail" type="email" autocomplete="email"></div>
-          <button class="primary-button" type="submit">Send details</button>
-        </form>
-      </section>
-
-      <section id="submitted" class="section submitted-section" hidden>
-        <div class="success-glyph">✓</div>
-        <div class="section-label">Details received</div>
-        <h2>Thank you. We have received your information.</h2>
-        <p>You can close this page. The product record will remain available for review.</p>
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <div><strong>Zareeva Track</strong><span>Independent product record keeper</span></div>
-      <p>Product records are held independently of the brand. Zareeva Track provides the record service for this verification.</p>
-    </div>
-  </footer>
-
+<div id="testBanner" class="test-banner" hidden><span>TEST RECORD</span>This is not a live product unit.</div>
+<header class="hero"><div class="shell"><div class="topbar"><div class="brand" id="tenantMark">KILHAVEN</div><div class="record-type">PRODUCT VERIFICATION</div></div><div class="hero-content"><div class="hero-kicker">Product record</div><h1 id="heroTitle">This product is in the registry.</h1><p id="heroLead" class="hero-lead">The code you scanned matches a registered product unit.</p><div class="verification"><div id="statusMark" class="status-mark">✓</div><div class="verification-copy"><strong>Record matched</strong><span>Registered product unit</span></div></div><div id="heroUnit" class="unit-lockup"><span id="unitNumber">871</span><small id="unitTotal">/ 2400</small></div><p id="unitCaption" class="unit-caption">Unique unit number recorded for this product.</p></div></div></header>
+<main><div class="shell"><div id="ack" class="ack" hidden><span>✓</span> This unit has been seen before. The product record remains unchanged.</div><div class="content-grid">
+<section id="identity" class="section identity-section"><div class="section-label">Product identity</div><div class="identity-head"><div><h2 id="productName">Single Malt Whisky</h2><p id="productDescriptor">12 Year Old · 700 ml</p></div><div id="scanState" class="state-chip">MATCHED</div></div><div id="facts" class="facts"></div></section>
+<section id="story" class="section story-section"><div class="section-label">About the product</div><div><h2 id="storyTitle">Made with time, place and care.</h2><p id="storyBody">This record connects the physical unit with product information supplied by the brand.</p></div></section>
+<section id="provenance" class="section provenance-section"><div class="section-label">Record details</div><div id="provenanceList" class="provenance-list"></div></section>
+<section id="checking" class="section action-section" hidden><div class="section-label">Review requested</div><div class="action-copy"><h2 id="checkingTitle">A little more information is needed.</h2><p id="checkingBody">The scan has been recorded, but a few details will help us review the unit. This does not by itself mean the product is not genuine.</p></div><form id="checkForm" class="consumer-form"><div class="field"><label for="purchase">Where did you purchase this product?</label><input id="purchase" autocomplete="organization" required></div><div class="field"><label for="city">City</label><input id="city" autocomplete="address-level2" required></div><div class="field"><label for="email">Email <span>(optional)</span></label><input id="email" type="email" autocomplete="email"></div><div class="field"><label for="seal">Photo of the seal <span>(optional)</span></label><input id="seal" type="file" accept="image/*"></div><button class="primary-button" type="submit">Send details</button></form></section>
+<section id="notFound" class="section action-section" hidden><div class="section-label">Product record</div><div class="action-copy"><h2>No product record was found for this code.</h2><p>A missing record does not by itself mean the product is not genuine. A damaged label, an incorrect scan, or a product that has not yet been released can have the same result.</p></div><form id="notFoundForm" class="consumer-form"><div class="field"><label for="nfPurchase">Where did you purchase this product?</label><input id="nfPurchase" required></div><div class="field"><label for="nfCity">City</label><input id="nfCity" required></div><div class="field"><label for="nfEmail">Email <span>(optional)</span></label><input id="nfEmail" type="email"></div><button class="primary-button" type="submit">Send details</button></form></section>
+<section id="submitted" class="section submitted-section" hidden><div class="success-glyph">✓</div><div class="section-label">Details received</div><h2>Thank you. We have received your information.</h2><p>You can close this page. The product record will remain available for review.</p></section>
+</div></div></main>
+<footer class="footer"><div class="shell footer-inner"><div><strong>Zareeva Track</strong><span>Independent product record keeper</span></div><p>Product records are held independently of the brand. Zareeva Track provides the record service for this verification.</p></div></footer>
 <script>
-(() => {
-  const params = new URLSearchParams(location.search);
-  const state = params.get('state') || 'first-scan';
-  const tenant = params.get('tenant') === 'vantek' ? 'vantek' : 'kilhaven';
-  document.documentElement.dataset.tenant = tenant;
-  const $ = id => document.getElementById(id);
-
-  const data = {
-    kilhaven: {
-      mark: 'KILHAVEN', product: 'Single Malt Whisky', descriptor: '12 Year Old · 700 ml', title: 'This product is in the registry.',
-      lead: 'The code you scanned matches a registered product unit.', number: '871', total: '/ 2400',
-      storyTitle: 'Made with time, place and care.', storyBody: 'This record connects the physical unit with product information supplied by the brand. It helps you understand what you have in hand and gives you a clear record of the unit you scanned.',
-      facts: [['Product','Single Malt Whisky'],['Age statement','12 years'],['Batch','KH-26-0871'],['Bottle size','700 ml'],['Bottled','18 July 2026'],['Origin','Kilhaven Estate']]
-    },
-    vantek: {
-      mark: 'VANTEK', product: 'Engine Lubricant', descriptor: 'SAE 5W-30 · 1 L', title: 'This product is in the registry.',
-      lead: 'The code you scanned matches a registered product unit.', number: '318', total: '/ 1800',
-      storyTitle: 'Precision for demanding equipment.', storyBody: 'This record connects the physical unit with product information supplied by Vantek Lubricants. It provides a clear record of the unit and the product details associated with it.',
-      facts: [['Product','Engine Lubricant'],['Grade','SAE 5W-30'],['Batch','VK-25-041'],['Pack size','1 L'],['Manufactured','12 August 2026'],['Origin','Singapore']]
-    }
-  }[tenant];
-
-  $('tenantMark').textContent = data.mark; $('productName').textContent = data.product; $('productDescriptor').textContent = data.descriptor;
-  $('heroTitle').textContent = data.title; $('heroLead').textContent = data.lead; $('unitNumber').textContent = data.number; $('unitTotal').textContent = data.total;
-  $('storyTitle').textContent = data.storyTitle; $('storyBody').textContent = data.storyBody;
-  $('facts').innerHTML = data.facts.map(([label,value]) => `<div class="fact"><span>${label}</span><strong>${value}</strong></div>`).join('');
-  $('provenanceList').innerHTML = '<div><span>Record created</span><strong>18 July 2026</strong></div><div><span>Record source</span><strong>Brand product registry</strong></div><div><span>Record keeper</span><strong>Zareeva Track</strong></div>';
-
-  const check = ['needs-checking','too-many-scans'].includes(state), notFound = state === 'code-not-found', returning = state === 'returning-scan', test = state === 'test-record', submitted = state === 'check-submitted';
-
-  if (returning) $('ack').hidden = false;
-  if (test) $('testBanner').hidden = false;
-
-  if (check) {
-    $('heroTitle').textContent = state === 'too-many-scans' ? 'We need to review this unit.' : 'A little more information is needed.';
-    $('heroLead').textContent = state === 'too-many-scans' ? 'This unit has been scanned more times than expected. We have recorded the scan for review.' : 'The record needs a little more information before we can complete the review.';
-    $('statusMark').textContent = 'i'; $('statusMark').classList.add('neutral'); $('scanState').textContent = 'REVIEW'; $('scanState').classList.add('neutral');
-    $('checking').hidden = false; $('story').hidden = true; $('provenance').hidden = true;
-  }
-
-  if (notFound) {
-    $('heroTitle').textContent = 'We could not find a product record.'; $('heroLead').textContent = 'The code did not return a registered product record.';
-    $('heroUnit').hidden = true; $('unitCaption').hidden = true; $('statusMark').textContent = '?'; $('statusMark').classList.add('neutral'); $('scanState').textContent = 'NO RECORD'; $('scanState').classList.add('neutral');
-    $('identity').hidden = true; $('story').hidden = true; $('provenance').hidden = true; $('notFound').hidden = false;
-  }
-
-  if (submitted) {
-    $('heroTitle').textContent = 'Your information has been received.'; $('heroLead').textContent = 'Thank you for helping us keep the product record complete.';
-    $('heroUnit').hidden = true; $('unitCaption').hidden = true; $('statusMark').textContent = '✓'; $('scanState').textContent = 'RECEIVED';
-    $('identity').hidden = true; $('story').hidden = true; $('provenance').hidden = true; $('submitted').hidden = false;
-  }
-
-  const submit = e => { e.preventDefault(); location.search = `?state=check-submitted${tenant === 'vantek' ? '&tenant=vantek' : ''}`; };
-  $('checkForm').addEventListener('submit', submit); $('notFoundForm').addEventListener('submit', submit);
-})();
-</script>
-</body>
-</html>
+(()=>{const p=new URLSearchParams(location.search),state=p.get('state')||'first-scan',tenant=p.get('tenant')==='vantek'?'vantek':'kilhaven',q=id=>document.getElementById(id);document.documentElement.dataset.tenant=tenant;const d={kilhaven:{mark:'KILHAVEN',product:'Single Malt Whisky',descriptor:'12 Year Old · 700 ml',title:'This product is in the registry.',lead:'The code you scanned matches a registered product unit.',number:'871',total:'/ 2400',storyTitle:'Made with time, place and care.',storyBody:'This record connects the physical unit with product information supplied by the brand. It helps you understand what you have in hand and gives you a clear record of the unit you scanned.',facts:[['Product','Single Malt Whisky'],['Age statement','12 years'],['Batch','KH-26-0871'],['Bottle size','700 ml'],['Bottled','18 July 2026'],['Origin','Kilhaven Estate']]},vantek:{mark:'VANTEK',product:'Engine Lubricant',descriptor:'SAE 5W-30 · 1 L',title:'This product is in the registry.',lead:'The code you scanned matches a registered product unit.',number:'318',total:'/ 1800',storyTitle:'Precision for demanding equipment.',storyBody:'This record connects the physical unit with product information supplied by Vantek Lubricants. It provides a clear record of the unit and the product details associated with it.',facts:[['Product','Engine Lubricant'],['Grade','SAE 5W-30'],['Batch','VK-25-041'],['Pack size','1 L'],['Manufactured','12 August 2026'],['Origin','Singapore']]}}[tenant];q('tenantMark').textContent=d.mark;q('productName').textContent=d.product;q('productDescriptor').textContent=d.descriptor;q('heroTitle').textContent=d.title;q('heroLead').textContent=d.lead;q('unitNumber').textContent=d.number;q('unitTotal').textContent=d.total;q('storyTitle').textContent=d.storyTitle;q('storyBody').textContent=d.storyBody;q('facts').innerHTML=d.facts.map(x=>`<div class="fact"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('');q('provenanceList').innerHTML='<div><span>Record created</span><strong>18 July 2026</strong></div><div><span>Record source</span><strong>Brand product registry</strong></div><div><span>Record keeper</span><strong>Zareeva Track</strong></div>';const check=['needs-checking','too-many-scans'].includes(state),nf=state==='code-not-found',ret=state==='returning-scan',test=state==='test-record',sub=state==='check-submitted';if(ret)q('ack').hidden=false;if(test)q('testBanner').hidden=false;if(check){q('heroTitle').textContent=state==='too-many-scans'?'We need to review this unit.':'A little more information is needed.';q('heroLead').textContent=state==='too-many-scans'?'This unit has been scanned more times than expected. We have recorded the scan for review.':'The record needs a little more information before we can complete the review.';q('statusMark').textContent='i';q('statusMark').classList.add('neutral');q('scanState').textContent='REVIEW';q('scanState').classList.add('neutral');q('checking').hidden=false;q('story').hidden=true;q('provenance').hidden=true}if(nf){q('heroTitle').textContent='We could not find a product record.';q('heroLead').textContent='The code did not return a registered product record.';q('heroUnit').hidden=true;q('unitCaption').hidden=true;q('statusMark').textContent='?';q('statusMark').classList.add('neutral');q('scanState').textContent='NO RECORD';q('scanState').classList.add('neutral');q('identity').hidden=true;q('story').hidden=true;q('provenance').hidden=true;q('notFound').hidden=false}if(sub){q('heroTitle').textContent='Your information has been received.';q('heroLead').textContent='Thank you for helping us keep the product record complete.';q('heroUnit').hidden=true;q('unitCaption').hidden=true;q('identity').hidden=true;q('story').hidden=true;q('provenance').hidden=true;q('submitted').hidden=false}const submit=e=>{e.preventDefault();location.search=`?state=check-submitted${tenant==='vantek'?'&tenant=vantek':''}`};q('checkForm').addEventListener('submit',submit);q('notFoundForm').addEventListener('submit',submit)})()
+</script></body></html>
