@@ -1,0 +1,73 @@
+:root {
+  --dt-primary: #b88945;
+  --dt-secondary: #efe5d4;
+  --dt-hero-bg: #191916;
+  --dt-page-bg: #f5f2eb;
+  --dt-text: #22211d;
+  --dt-muted: #716f68;
+  --dt-line: #d9d4c9;
+  --dt-display: Georgia, 'Times New Roman', serif;
+  --dt-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html { background: var(--dt-page-bg); }
+body { margin: 0; color: var(--dt-text); background: var(--dt-page-bg); font-family: var(--dt-body); line-height: 1.55; }
+[hidden] { display: none !important; }
+.dt-container { max-width: 1040px; }
+.dt-hero { background: var(--dt-hero-bg); color: #f7f2e9; min-height: 520px; display: flex; align-items: stretch; }
+.dt-brand-row { display:flex; justify-content:space-between; align-items:center; padding-top:28px; }
+.dt-tenant-mark { font-weight:700; letter-spacing:.18em; font-size:.9rem; }
+.dt-record-label { font-size:.68rem; letter-spacing:.16em; opacity:.58; }
+.dt-hero-copy { min-height:420px; display:flex; flex-direction:column; justify-content:center; padding:42px 0 70px; }
+.dt-eyebrow,.dt-kicker { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:700; margin:0 0 14px; }
+.dt-eyebrow { opacity:.62; }
+.dt-unit-wrap { display:flex; align-items:baseline; gap:12px; font-family:var(--dt-display); line-height:.9; }
+.dt-unit-number { font-size:clamp(7rem, 23vw, 15rem); letter-spacing:-.065em; font-weight:700; }
+.dt-unit-total { font-size:clamp(1.7rem, 5vw, 3.2rem); opacity:.45; }
+.dt-unit-caption { margin:18px 0 30px; color:#b9b5ac; font-size:.88rem; }
+.dt-verified { display:flex; gap:10px; align-items:center; font-size:.84rem; color:#d7d2c7; }
+.dt-punch { width:14px; height:14px; border:2px solid var(--dt-primary); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:transparent; flex:0 0 auto; }
+.dt-content { padding:0 0 70px; }
+.dt-ack { border-bottom:1px solid var(--dt-line); padding:16px 0; color:var(--dt-muted); font-size:.8rem; display:flex; gap:8px; }
+.dt-section { padding:64px 0; border-bottom:1px solid var(--dt-line); }
+.dt-section h1,.dt-section h2 { font-family:var(--dt-display); font-weight:600; letter-spacing:-.025em; margin:0; }
+.dt-section h1 { font-size:clamp(2rem, 5vw, 3.6rem); max-width:800px; }
+.dt-section h2 { font-size:clamp(1.8rem, 4vw, 3rem); max-width:760px; }
+.dt-facts { margin-top:42px; border-top:1px solid var(--dt-line); }
+.dt-fact { padding:20px 18px 20px 0; border-bottom:1px solid var(--dt-line); }
+.dt-fact span,.dt-provenance-list span { display:block; color:var(--dt-muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; margin-bottom:5px; }
+.dt-fact strong,.dt-provenance-list strong { font-size:1rem; font-weight:600; }
+.dt-story p { max-width:690px; margin:20px 0 0; font-size:1.08rem; color:#48463f; }
+.dt-provenance-list { margin-top:34px; }
+.dt-provenance-list div { display:flex; justify-content:space-between; gap:24px; padding:17px 0; border-top:1px solid var(--dt-line); }
+.dt-checking,.dt-not-found { max-width:760px; }
+.dt-checking h2,.dt-not-found h2 { margin-bottom:16px; }
+.dt-muted { color:var(--dt-muted); }
+.dt-checking label,.dt-not-found label { font-size:.82rem; font-weight:600; margin-bottom:7px; display:block; }
+.dt-checking label span { color:var(--dt-muted); font-weight:400; }
+.form-control { min-height:52px; border-color:#cfc9bd; border-radius:2px; background:#fbfaf7; }
+.form-control:focus { border-color:var(--dt-primary); box-shadow:0 0 0 .2rem rgba(184,137,69,.15); }
+.dt-button { min-height:52px; padding:0 24px; border-radius:2px; background:var(--dt-text); color:#fff; font-weight:600; }
+.dt-button:hover { background:#000; color:#fff; }
+.dt-test-banner { background:repeating-linear-gradient(135deg, #181818 0, #181818 12px, #e5c86c 12px, #e5c86c 24px); color:#111; padding:16px; text-align:center; font-weight:800; letter-spacing:.12em; font-size:.78rem; }
+.dt-test-banner::before { content:''; display:inline-block; background:#fff; padding:2px 8px; margin-right:8px; }
+.dt-footer { background:#eae6dc; padding:38px 0 46px; font-size:.78rem; color:#555149; }
+.dt-footer p { margin:0 0 5px; }
+.dt-footer-small { color:#777269; }
+
+html[data-tenant='vantek'] { --dt-primary:#7ea4bd; --dt-secondary:#dce5e9; --dt-hero-bg:#172028; --dt-page-bg:#eef1f2; --dt-text:#1d252b; --dt-muted:#657078; --dt-line:#cbd2d5; --dt-display: 'Arial Narrow', Arial, sans-serif; }
+html[data-tenant='vantek'] .dt-tenant-mark { letter-spacing:.08em; }
+html[data-tenant='vantek'] .dt-unit-number { font-weight:800; letter-spacing:-.08em; }
+
+@media (max-width: 575.98px) {
+  .dt-hero { min-height:460px; }
+  .dt-brand-row { padding-top:20px; }
+  .dt-hero-copy { min-height:370px; padding:28px 0 54px; }
+  .dt-unit-number { font-size:clamp(6.2rem, 29vw, 9rem); }
+  .dt-section { padding:48px 0; }
+  .dt-fact { padding-right:10px; }
+  .dt-provenance-list div { display:block; }
+  .dt-provenance-list strong { display:block; margin-top:4px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
