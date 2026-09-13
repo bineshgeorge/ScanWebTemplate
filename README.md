@@ -8,7 +8,10 @@ Zareeva Track consumer verification page. Built to the UI/UX design brief: one s
 |---|---|
 | `index.html` | Verified state with a sample product (SoundMax headphones, placeholder). |
 | `invalid.html` | Invalid Code state with guidance, Try Again / Report, support. |
-| `states.html` | All ten status states rendered from one component. |
+| `not-found.html`, `verification-alert.html` | Guidance-shaped states (same skeleton as invalid). |
+| `unable-to-verify.html`, `duplicate-scan.html`, `recalled.html`, `expired.html` | Product-shaped states (same skeleton as index, banner swapped, notice block inserted, assurances removed). |
+| `loading.html`, `unavailable.html` | Minimal states: status card centred, no product body. |
+| `states.html` | All ten status banners side by side, each linked to its page. |
 | `product.sample.json` | Data contract the renderer consumes. `fields[]` and `sections[]` are dynamic; `_states` maps status to copy, icon, colour and body layout. |
 | `css/styles.css` | Tokens at the top (`--zt-*`). Everything below uses them. |
 | `js/app.js` | Modal titles, language selector, gallery thumbnails. Nothing else. |
