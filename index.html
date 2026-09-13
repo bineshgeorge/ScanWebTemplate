@@ -1,28 +1,164 @@
 <!doctype html>
-<html lang="en" data-tenant="kilhaven">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f1eb">
-<meta name="description" content="Consumer product record">
-<title>Product record | Zareeva Track</title>
-<link rel="stylesheet" href="css/denebtrack.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zareeva Track — a consumer-first GS1 Digital Link product experience.">
+  <title>Zareeva Track | Product Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div id="testBanner" class="test-banner" hidden><span>TEST ENVIRONMENT</span> This is a demonstration product record</div>
-<header class="header"><div class="wrap header-inner"><a class="wordmark" href="#">ZAREEVA</a><div class="header-right"><span id="tenantMark">KILHAVEN</span><span class="header-rule"></span><span>TRACK</span></div></div></header>
-<main>
-<section id="opening" class="opening"><div class="wrap opening-grid"><div class="opening-copy"><div class="eyebrow"><span class="eyebrow-line"></span><span id="recordLabel">PRODUCT RECORD</span></div><p class="brand-name" id="brandName">KILHAVEN DISTILLERY</p><h1 id="heroTitle">Single Malt<br><i>Whisky</i></h1><p class="hero-description" id="heroLead">A registered individual unit, recorded by Zareeva Track.</p></div><div id="unit-visual" class="unit-visual" aria-label="Product unit number"><div class="unit-top"><span>UNIT</span><span id="unitType">INDIVIDUAL</span></div><div class="unit-number" id="unitNumber">871</div><div class="unit-bottom"><span id="unitTotal">OF 2400</span><span id="unitStatus">REGISTERED</span></div></div></div></section>
-<section class="proof-strip"><div class="wrap proof-inner"><div class="proof-status"><span id="statusDot"></span><strong id="statusText">Record matched</strong></div><p id="proofCopy">The scanned code corresponds to this product record.</p><div class="proof-mark" aria-hidden="true">↗</div></div></section>
-<section id="product-intro" class="product-intro"><div class="wrap intro-grid"><div class="intro-label">01 / PRODUCT</div><div class="intro-main"><p class="intro-kicker" id="productDescriptor">12 Year Old · 700 ml</p><h2 id="productName">Single Malt Whisky</h2><div id="facts" class="facts"></div></div></div></section>
-<section id="story" class="story"><div class="wrap story-grid"><div class="section-index">02 / THE PRODUCT</div><div><p class="display-copy" id="storyTitle">Made with time,<br><i>place and care.</i></p><p class="body-copy" id="storyBody">This record connects the physical unit with product information supplied by the brand. It gives you a clear, independent record of the product in your hands.</p></div></div></section>
-<section id="record-section" class="record-section"><div class="wrap record-grid"><div class="section-index">03 / RECORD</div><div class="record-content"><div id="provenanceList" class="record-list"></div><div class="record-note"><span>Independent record</span><p>Product records are held independently by Zareeva Track.</p></div></div></div></section>
-<section id="checking" class="consumer-section" hidden><div class="wrap consumer-grid"><div class="section-index">04 / REVIEW</div><div class="consumer-content"><p class="display-copy" id="checkingTitle">A little more information<br><i>is needed.</i></p><p id="checkingBody" class="body-copy">The scan has been recorded. A few details will help us review this unit. This does not by itself mean the product is not genuine.</p><form id="checkForm" class="consumer-form"><label>Where did you purchase this product?<input id="purchase" required></label><label>City<input id="city" required></label><label>Email <small>optional</small><input id="email" type="email"></label><label>Photo of the seal <small>optional</small><input id="seal" type="file" accept="image/*"></label><button type="submit">Submit information <span>↗</span></button></form></div></div></section>
-<section id="notFound" class="consumer-section" hidden><div class="wrap consumer-grid"><div class="section-index">04 / RECORD</div><div class="consumer-content"><p class="display-copy">We could not find<br><i>this product.</i></p><p class="body-copy">The code did not return a registered product record. A missing record does not by itself mean the product is not genuine. A damaged label, incorrect scan, or unreleased product can have the same result.</p><form id="notFoundForm" class="consumer-form"><label>Where did you purchase this product?<input id="nfPurchase" required></label><label>City<input id="nfCity" required></label><label>Email <small>optional</small><input id="nfEmail" type="email"></label><button type="submit">Submit information <span>↗</span></button></form></div></div></section>
-<section id="submitted" class="submitted" hidden><div class="wrap submitted-inner"><div class="submitted-number">04</div><div><p class="eyebrow-text">INFORMATION RECEIVED</p><p class="display-copy">Thank you.<br><i>We have the record.</i></p><p class="body-copy">You can close this page. The information you provided is now available for review.</p></div></div></section>
-</main>
-<footer><div class="wrap footer-inner"><div><strong>ZAREEVA TRACK</strong><span>Independent product record</span></div><p>Product records are held independently by Zareeva Track.</p></div></footer>
-<script>
-(()=>{const p=new URLSearchParams(location.search),state=p.get('state')||'first-scan',tenant=p.get('tenant')==='vantek'?'vantek':'kilhaven',$=id=>document.getElementById(id);document.documentElement.dataset.tenant=tenant;const d={kilhaven:{mark:'KILHAVEN',brand:'KILHAVEN DISTILLERY',product:'Single Malt Whisky',descriptor:'12 Year Old · 700 ml',number:'871',total:'OF 2400',facts:[['Age statement','12 years'],['Batch','KH-26-0871'],['Bottle size','700 ml'],['Bottled','18 July 2026'],['Origin','Kilhaven Estate'],['Record','Individual unit']],storyTitle:'Made with time,<br><i>place and care.</i>',storyBody:'This record connects the physical unit with product information supplied by the brand. It gives you a clear, independent record of the product in your hands.'},vantek:{mark:'VANTEK',brand:'VANTEK LUBRICANTS',product:'Engine Lubricant',descriptor:'SAE 5W-30 · 1 L',number:'318',total:'OF 1800',facts:[['Grade','SAE 5W-30'],['Batch','VK-25-041'],['Pack size','1 L'],['Manufactured','12 August 2026'],['Origin','Singapore'],['Record','Individual unit']],storyTitle:'Precision for<br><i>demanding equipment.</i>',storyBody:'This record connects the physical unit with product information supplied by Vantek Lubricants. It provides a clear, independent record of the unit and product details associated with it.'}}[tenant];$('tenantMark').textContent=d.mark;$('brandName').textContent=d.brand;$('productName').textContent=d.product;$('productDescriptor').textContent=d.descriptor;$('unitNumber').textContent=d.number;$('unitTotal').textContent=d.total;$('storyTitle').innerHTML=d.storyTitle;$('storyBody').textContent=d.storyBody;$('facts').innerHTML=d.facts.map(x=>`<div class="fact"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('');$('provenanceList').innerHTML='<div><span>Record created</span><strong>18 July 2026</strong></div><div><span>Source</span><strong>Brand product registry</strong></div><div><span>Record keeper</span><strong>Zareeva Track</strong></div>';const review=['needs-checking','too-many-scans'].includes(state),nf=state==='code-not-found',ret=state==='returning-scan',test=state==='test-record',sub=state==='check-submitted';if(ret){$('statusText').textContent='Previously scanned';$('proofCopy').textContent='This product record is unchanged since your previous scan.'}if(test)$('testBanner').hidden=false;if(review){$('statusText').textContent='Review required';$('statusDot').classList.add('neutral');$('unitStatus').textContent='REVIEW';$('heroTitle').innerHTML=state==='too-many-scans'?'This unit needs<br><i>a review.</i>':'A little more<br><i>information is needed.</i>';$('heroLead').textContent=state==='too-many-scans'?'The scan has been recorded for review.':'The record needs a little more information before the review can be completed.';$('checking').hidden=false;$('recordLabel').textContent='PRODUCT REVIEW';$('record-section').hidden=true}if(nf){$('statusText').textContent='No record found';$('statusDot').classList.add('neutral');$('unitStatus').textContent='NOT FOUND';$('heroTitle').innerHTML='We could not find<br><i>this product.</i>';$('heroLead').textContent='The scanned code did not return a registered product record.';$('unit-visual').hidden=true;$('product-intro').hidden=true;$('story').hidden=true;$('record-section').hidden=true;$('notFound').hidden=false}if(sub){$('statusText').textContent='Information received';$('proofCopy').textContent='Thank you for helping us keep the product record complete.';$('opening').hidden=true;$('product-intro').hidden=true;$('story').hidden=true;$('record-section').hidden=true;$('checking').hidden=true;$('submitted').hidden=false}const submit=e=>{e.preventDefault();location.search=`?state=check-submitted${tenant==='vantek'?'&tenant=vantek':''}`};$('checkForm').addEventListener('submit',submit);$('notFoundForm').addEventListener('submit',submit)})()
-</script>
-</body></html>
+  <header class="site-header">
+    <div class="container-fluid page-shell">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Zareeva Track home">
+          <span class="brand-name">ZAREEVA</span>
+          <span class="brand-track">TRACK</span>
+        </a>
+        <div class="header-tools">
+          <button class="header-link" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="dropdown">
+            <button class="header-link language-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe2"></i><span>EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end language-menu">
+              <li><button class="dropdown-item active" type="button">English</button></li>
+              <li><button class="dropdown-item" type="button">中文</button></li>
+              <li><button class="dropdown-item" type="button">Bahasa Melayu</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-message d-none d-lg-block">SCAN TODAY<br>FOR A BRIGHTER<br>TOMORROW</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="product-stage">
+      <div class="container-fluid page-shell">
+        <div class="row g-0 product-grid">
+          <div class="col-lg-6 hero-visual">
+            <div class="hero-copy">
+              <span class="eyebrow">Zareeva Track</span>
+              <h1>Good<br>Choices<br><em>Go Further</em></h1>
+              <span class="hero-rule"></span>
+              <p>People.<br>Products.<br>A Healthier Planet.</p>
+            </div>
+            <div class="hero-photo" role="img" aria-label="Botanical hand wash in a natural setting"></div>
+          </div>
+
+          <div class="col-lg-6 product-panel">
+            <div class="verified-banner">
+              <div class="verified-icon"><i class="bi bi-shield-check"></i></div>
+              <div><strong>Original Product</strong><span>This product is genuine and has been verified using GS1 standards.</span></div>
+            </div>
+
+            <div class="product-copy">
+              <h2>NATURA Botanical Hand Wash</h2>
+              <div class="product-subtitle">Green Tea &amp; Aloe Vera <span>•</span> 300 mL</div>
+              <p class="product-description">A gentle, plant-based hand wash infused with natural botanicals to cleanse and refresh, leaving your hands feeling soft, healthy and naturally cared for.</p>
+            </div>
+
+            <div class="benefits row g-2 g-sm-3">
+              <div class="col-3"><div class="benefit"><div class="benefit-icon"><i class="bi bi-leaf"></i></div><span>Plant-based<br>Formula</span></div></div>
+              <div class="col-3"><div class="benefit"><div class="benefit-icon"><i class="bi bi-droplet"></i></div><span>Gentle on<br>Skin</span></div></div>
+              <div class="col-3"><div class="benefit"><div class="benefit-icon"><i class="bi bi-leaf-fill"></i></div><span>Environmentally<br>Conscious</span></div></div>
+              <div class="col-3"><div class="benefit"><div class="benefit-icon"><i class="bi bi-heart"></i></div><span>Everyday<br>Care</span></div></div>
+            </div>
+
+            <div class="details-list">
+              <div class="detail-row"><span>GTIN (Product Code)</span><strong>09506000134352</strong></div>
+              <div class="detail-row"><span>Brand</span><strong>NATURA</strong></div>
+              <div class="detail-row"><span>Product</span><strong>Botanical Hand Wash</strong></div>
+              <div class="detail-row"><span>Variant</span><strong>Green Tea &amp; Aloe Vera</strong></div>
+              <div class="detail-row"><span>Net Content</span><strong>300 mL</strong></div>
+              <div class="detail-row"><span>Batch/Lot No.</span><strong>B3K2407</strong></div>
+              <div class="detail-row"><span>Manufacture Date</span><strong>15 Jul 2024</strong></div>
+              <div class="detail-row"><span>Country of Origin</span><strong>Singapore</strong></div>
+            </div>
+
+            <div class="digital-link-card">
+              <div class="qr" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="digital-link-copy"><strong>Scanned via GS1 Digital Link</strong><span>Global Standards. Trusted Products.</span></div>
+              <a href="#gs1" class="learn-link">Learn more about GS1 <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section" id="gs1">
+      <div class="container-fluid page-shell">
+        <div class="story-grid">
+          <article class="story-intro">
+            <span class="eyebrow">Our approach</span>
+            <h2>A Healthier Tomorrow</h2>
+            <p>At Zareeva, we believe small choices make a big difference. Our products are thoughtfully formulated with natural ingredients, so you can care for yourself and the planet — together.</p>
+            <a class="dark-button" href="#details">Discover Our Story <i class="bi bi-arrow-right"></i></a>
+          </article>
+          <a class="story-card" href="#details">
+            <div class="card-image image-leaf"></div>
+            <div class="story-card-body"><h3>Naturally<br>Derived Ingredients</h3><p>Gentle, effective and kind to your skin.</p></div>
+          </a>
+          <a class="story-card" href="#details">
+            <div class="card-image image-water"></div>
+            <div class="story-card-body"><h3>Thoughtful<br>Formulations</h3><p>Clean ingredients for everyday care.</p></div>
+          </a>
+          <a class="story-card" href="#details">
+            <div class="card-image image-planet"></div>
+            <div class="story-card-body"><h3>A Healthier<br>Planet</h3><p>Sustainable choices for future generations.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile-details" id="details">
+      <div class="container page-shell">
+        <div class="accordion" id="productAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetails">Product Details <i class="bi bi-chevron-down"></i></button></h2>
+            <div id="collapseDetails" class="accordion-collapse collapse" data-bs-parent="#productAccordion">
+              <div class="accordion-body">This consumer view is powered by GS1 Digital Link data. The product identifier, batch information and verification state are presented in a clear, mobile-first format.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-fluid page-shell">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="#top"><span class="brand-name">ZAREEVA</span><span class="brand-track">TRACK</span></a>
+        <nav class="footer-links" aria-label="Legal links">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Terms and Conditions">Terms and Conditions</a>
+          <span>|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Privacy Policy">Privacy Policy</a>
+          <span>|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Cookie Policy">Cookie Policy</a>
+          <span>|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Contact Us">Contact Us</a>
+        </nav>
+        <div class="socials" aria-label="Social media"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></div>
+        <div class="copyright">© 2024 Zareeva Track. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content clean-modal"><div class="modal-header"><h2 class="modal-title" id="helpModalLabel">How Zareeva Track works</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Scan the GS1 Digital Link on a participating product to access trusted product information, provenance and verification details.</p><p class="mb-0">If information looks incorrect, contact the brand using the details provided on the product or its official website.</p></div></div></div>
+  </div>
+
+  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content clean-modal"><div class="modal-header"><h2 class="modal-title" id="legalModalLabel">Information</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p id="legalText">This page is a demonstration consumer experience for Zareeva Track.</p></div></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

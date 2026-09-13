@@ -1,42 +1,20 @@
-# ScanWebTemplate
+# Zareeva Track — GS1 Consumer Scan Template
 
-Consumer-facing Zareeva Track product verification template.
+A from-scratch, mobile-first Bootstrap 5 implementation based on the supplied Zareeva Track UI reference.
 
-## Purpose
+## Included
 
-This is the post-scan experience for consumers who scan a GS1 code on a physical product to check its registered product record. The interface is intentionally designed as a **consumer product experience**, not an administration or analytics portal.
+- Responsive consumer product verification page
+- Mobile-first layout with compact header and legal footer
+- GS1 verification banner and Digital Link panel
+- Product identity, variant, batch, manufacture and origin data
+- Responsive benefits and storytelling cards
+- Help, language and legal modal interactions
+- Bootstrap 5.3 + Bootstrap Icons
+- Custom CSS with desktop and phone breakpoints
 
-## Design principles
+## Run
 
-- Unit number is the visual anchor.
-- Brand/tenant identity is prominent; Zareeva Track remains the independent record keeper.
-- Five supported states: first scan, returning scan, needs checking, code not found, and test record.
-- Kilhaven and Vantek use distinct visual personalities through CSS design tokens.
-- Responsive/mobile-first layout suitable for QR/GS1 scanning on a phone.
-- No Bootstrap or external CDN dependency; the page works as a local static file.
-- Forms and state changes remain client-side demo behavior until connected to the production verification API.
-- Layout is designed to tolerate long labels and future multilingual/RTL content.
+Open `index.html` directly in a browser or serve the repository with any static web server.
 
-## Demo states
-
-Open `index.html` normally for the first-scan state. Add query strings:
-
-- `?state=returning-scan`
-- `?state=needs-checking`
-- `?state=too-many-scans`
-- `?state=code-not-found`
-- `?state=test-record`
-- `?state=check-submitted`
-- `?tenant=vantek`
-
-States can be combined, for example:
-
-`index.html?tenant=vantek&state=returning-scan`
-
-## Local use
-
-Open `index.html` directly in a browser. No web server or package installation is required for the static demo.
-
-## Production integration
-
-Replace the demo query-string state/data layer with the ScanWeb verification API and real product record payloads. Keep the visual system and tenant tokens independent from the API implementation.
+The page intentionally uses remote Unsplash imagery for the visual treatment; replace those URLs with your production product and editorial assets when connecting real GS1 data.
