@@ -39,7 +39,7 @@ button { font-family: inherit; }
 .product-stage { background: #fff; }
 .product-grid { min-height: 605px; }
 .hero-visual { min-height: 605px; position: relative; overflow: hidden; background: #d8d8c8; }
-/* TODO: replace the Unsplash placeholder with the approved NATURA hero render (img/hero-natura.jpg). */
+/* Placeholder image. Per-product hero comes from data (see template.html / product.sample.json). */
 .hero-photo { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(25,38,18,.22) 0%, rgba(25,38,18,.06) 45%, rgba(255,255,255,0) 70%), url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1400&q=88'); background-position: center; background-size: cover; transform: scale(1.02); }
 .hero-copy { position: absolute; z-index: 2; top: 50px; left: clamp(34px, 5vw, 50px); color: white; }
 .hero-copy h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(46px, 3.6vw, 52px); line-height: 1.02; margin: 0 0 16px; letter-spacing: -.01em; }
@@ -53,11 +53,19 @@ button { font-family: inherit; }
 .verified-banner strong, .verified-banner span { display: block; }
 .verified-banner strong { font-size: 16px; margin-bottom: 2px; }
 .verified-banner span { font-size: 11px; color: #263b2e; }
+/* Verification states. Default (no modifier) = verified. */
+.verified-banner--unverified { background: #fbf3e3; }
+.verified-banner--unverified .verified-icon { background: #b7791f; }
+.verified-banner--unverified span { color: #5b4520; }
+.verified-banner--failed { background: #fbe9e7; }
+.verified-banner--failed .verified-icon { background: #b3261e; }
+.verified-banner--failed span { color: #5c2a26; }
 .product-copy h2 { font-size: clamp(26px, 2.5vw, 33px); line-height: 1.05; margin: 0 0 6px; letter-spacing: -.045em; }
 .product-subtitle { font-size: 16px; color: #162742; margin-bottom: 8px; }
 .product-subtitle span { margin: 0 7px; color: #6b777e; }
 .product-description { color: #5b6572; line-height: 1.5; margin: 0 0 18px; max-width: 590px; }
-.benefits { border-bottom: 1px solid var(--line); padding-bottom: 17px; margin-bottom: 10px; }
+.benefits { display: flex; flex-wrap: wrap; gap: 12px 8px; border-bottom: 1px solid var(--line); padding-bottom: 17px; margin-bottom: 10px; }
+.benefit-item { flex: 1 1 0; min-width: 88px; }
 .benefit { text-align: center; color: #15263e; font-size: 10px; line-height: 1.35; }
 .benefit-icon { width: 48px; height: 48px; border-radius: 50%; background: #edf6ee; color: #247a43; display: grid; place-items: center; font-size: 22px; margin: 0 auto 7px; }
 .benefit-icon svg { width: 22px; height: 22px; }
@@ -82,8 +90,11 @@ button { font-family: inherit; }
 
 /* ---------- Story ---------- */
 .story-section { padding: 22px 0 23px; background: #f3f5f1; }
-.story-grid { display: grid; grid-template-columns: 1.65fr repeat(3, 1fr); gap: 15px; }
+.story-grid { display: flex; gap: 15px; }
+.story-intro { flex: 1.65 1 0; }
+.story-card { flex: 1 1 0; min-width: 0; }
 .story-intro { background: linear-gradient(135deg,#f6f8f3,#edf2eb); border-radius: 12px; padding: 26px 27px; display: flex; flex-direction: column; align-items: flex-start; }
+.story-grid--no-cards .story-intro { flex: 1 1 100%; }
 .story-intro h2 { font-family: var(--serif); font-size: 35px; font-weight: 500; margin: 0 0 6px; }
 .story-intro p { color: #56625e; line-height: 1.42; font-size: 12px; max-width: 430px; margin-bottom: 18px; }
 .dark-button { background: var(--deep-green); color: white; border-radius: 24px; padding: 9px 17px; font-size: 11px; transition: transform .2s ease, background .2s ease; }
@@ -133,8 +144,9 @@ button { font-family: inherit; }
   .hero-copy { top: 30px; left: 30px; }
   .hero-copy h1 { font-size: 48px; }
   .product-panel { padding: 26px 24px 25px; }
-  .story-grid { grid-template-columns: 1fr 1fr; }
-  .story-intro { grid-column: 1 / -1; }
+  .story-grid { flex-wrap: wrap; }
+  .story-intro { flex: 1 1 100%; }
+  .story-card { flex: 1 1 calc(50% - 8px); }
   .footer-inner { grid-template-columns: 1fr auto; padding: 15px 22px; }
   .footer-brand { grid-row: 1; }
   .footer-links { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; flex-wrap: wrap; gap: 10px 13px; margin-top: 9px; }
@@ -156,7 +168,7 @@ button { font-family: inherit; }
   /* Hero becomes an inset rounded image card, no copy overlay */
   .product-stage { padding: 8px 12px 0; }
   .hero-visual { min-height: 300px; border-radius: 12px; }
-  .hero-photo { background-position: 57% center; background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=88'); }
+  .hero-photo { background-position: 57% center; }
 
   .product-panel { padding: 16px 4px 12px; }
   .verified-banner { padding: 12px 12px; gap: 12px; border-radius: 12px; margin-bottom: 16px; }

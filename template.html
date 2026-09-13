@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{locale}}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Zareeva Track. A consumer-first GS1 Digital Link product experience.">
-  <title>Zareeva Track | Product Verification</title>
+  <title>Zareeva Track | {{product.brand}} {{product.name}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Rendered sample. NATURA is a placeholder brand. The data-driven version is template.html + product.sample.json. -->
+  <!-- Mustache-style template. Placeholders: {{x}} escaped text, {{{x}}} raw HTML, {{#list}}...{{/list}} repeat, {{^x}}...{{/x}} if empty.
+       Header, verified banner, GS1 card and footer chrome are Zareeva Track. Everything else is brand-supplied per GTIN. See product.sample.json. -->
   <!-- Inline SVG symbols. Bootstrap Icons has no leaf glyph, so the two leaf benefits use these. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="ico-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -57,30 +58,29 @@
         <div class="row g-0 product-grid">
           <div class="col-lg-6 hero-visual">
             <div class="hero-copy d-none d-sm-block">
-              <h1>Good<br>Choices<br><em>Go Further</em></h1>
+              <h1>{{{hero.headline}}}</h1>
               <span class="hero-rule"></span>
-              <p>People.<br>Products.<br>A Healthier Planet.</p>
+              <p>{{{hero.tagline}}}</p>
             </div>
-            <div class="hero-photo" role="img" aria-label="NATURA botanical hand wash on a stone plinth"></div>
+            <div class="hero-photo" role="img" aria-label="{{hero.imageAlt}}" style="background-image:linear-gradient(90deg, rgba(25,38,18,.22) 0%, rgba(25,38,18,.06) 45%, rgba(255,255,255,0) 70%), url('{{hero.imageUrl}}')"></div>
           </div>
 
           <div class="col-lg-6 product-panel">
-            <div class="verified-banner">
-              <div class="verified-icon"><i class="bi bi-shield-check"></i></div>
-              <div><strong>Original Product</strong><span>This product is genuine and has been verified using GS1 standards.</span></div>
+            <div class="verified-banner{{#verification.modifier}} verified-banner--{{verification.modifier}}{{/verification.modifier}}">
+              <div class="verified-icon"><i class="bi {{verification.icon}}"></i></div>
+              <div><strong>{{verification.title}}</strong><span>{{verification.message}}</span></div>
             </div>
 
             <div class="product-copy">
-              <h2>NATURA Botanical Hand Wash</h2>
-              <div class="product-subtitle">Green Tea &amp; Aloe Vera <span>•</span> 300 mL</div>
-              <p class="product-description">A gentle, plant-based hand wash infused with natural botanicals to cleanse and refresh, leaving your hands feeling soft, healthy and naturally cared for.</p>
+              <h2>{{product.brand}} {{product.name}}</h2>
+              <div class="product-subtitle">{{product.variant}} <span>•</span> {{product.netContent}}</div>
+              <p class="product-description">{{product.description}}</p>
             </div>
 
             <div class="benefits">
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><svg><use href="#ico-leaf"/></svg></div><span>Plant-based<br>Formula</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><i class="bi bi-droplet"></i></div><span>Gentle on<br>Skin</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><svg><use href="#ico-leaf-fill"/></svg></div><span>Environmentally<br>Conscious</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><i class="bi bi-heart"></i></div><span>Everyday<br>Care</span></div></div>
+              {{#benefits}}
+              <div class="benefit-item"><div class="benefit"><div class="benefit-icon">{{{icon}}}</div><span>{{{label}}}</span></div></div>
+              {{/benefits}}
             </div>
 
             <!-- Desktop: always open. Mobile: collapsed behind the "Product Details" bar. -->
@@ -89,22 +89,15 @@
             </button>
             <div id="productDetails" class="collapse details-collapse">
               <div class="details-list">
-                <div class="detail-row"><span>GTIN (Product Code)</span><strong>09506000134352</strong></div>
-                <div class="detail-row"><span>Brand</span><strong>NATURA</strong></div>
-                <div class="detail-row"><span>Product</span><strong>Botanical Hand Wash</strong></div>
-                <div class="detail-row"><span>Variant</span><strong>Green Tea &amp; Aloe Vera</strong></div>
-                <div class="detail-row"><span>Net Content</span><strong>300 mL</strong></div>
-                <div class="detail-row"><span>Batch/Lot No.</span><strong>B3K2407</strong></div>
-                <div class="detail-row"><span>Manufacture Date</span><strong>15 Jul 2024</strong></div>
-                <div class="detail-row"><span>Country of Origin</span><strong>Singapore</strong></div>
+                {{#details}}
+                <div class="detail-row"><span>{{label}}</span><strong>{{value}}</strong></div>
+                {{/details}}
               </div>
 
               <div class="digital-link-card">
-                <div class="qr">
-                  <svg class="qr-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h33v33H0z"/><path stroke="#132321" d="M0 0.5h7m1 0h1m1 0h2m1 0h6m2 0h1m4 0h7M0 1.5h1m5 0h1m4 0h2m3 0h1m3 0h1m3 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h1m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m5 0h1m2 0h1m3 0h1m6 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h1m1 0h1m3 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h3m2 0h3m2 0h2m1 0h1m1 0h1m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 7.5h3m1 0h3m2 0h2M0 8.5h1m1 0h1m3 0h2m1 0h3m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1M1 9.5h3m1 0h1m1 0h1m1 0h5m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m2 0h1M1 10.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m3 0h2m4 0h3M0 11.5h2m2 0h2m2 0h3m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1M2 12.5h1m2 0h2m1 0h1m2 0h3m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1M0 13.5h1m1 0h1m4 0h3m1 0h2m4 0h1m13 0h2M0 14.5h4m2 0h1m2 0h2m2 0h3m3 0h1m1 0h1m1 0h2m5 0h1m1 0h1M1 15.5h4m2 0h1m3 0h3m4 0h1m3 0h5m1 0h1M0 16.5h2m3 0h2m2 0h2m3 0h2m2 0h3m5 0h2m1 0h3M0 17.5h4m3 0h1m2 0h1m1 0h2m1 0h1m2 0h3m2 0h2m1 0h1m2 0h1m1 0h1M0 18.5h1m2 0h1m1 0h2m3 0h1m3 0h11m2 0h1m1 0h2m1 0h1M0 19.5h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h2m3 0h3m1 0h3m1 0h1m1 0h2m1 0h1M0 20.5h2m1 0h1m1 0h3m1 0h2m4 0h4m1 0h3m1 0h4m4 0h1M2 21.5h2m4 0h1m3 0h2m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m6 0h1M0 22.5h3m2 0h2m4 0h1m1 0h1m2 0h3m1 0h2m1 0h3m1 0h3m2 0h1M3 23.5h2m2 0h2m2 0h2m1 0h3m2 0h2m1 0h2m1 0h1m3 0h2m1 0h1M0 24.5h3m1 0h1m1 0h5m1 0h1m1 0h1m3 0h1m1 0h1m3 0h5m2 0h1M8 25.5h1m3 0h3m2 0h3m1 0h2m1 0h1m3 0h1m2 0h1M0 26.5h7m1 0h1m1 0h4m1 0h1m3 0h1m4 0h1m1 0h1m1 0h5M0 27.5h1m5 0h1m2 0h3m1 0h1m1 0h3m3 0h1m2 0h1m3 0h2M0 28.5h1m1 0h3m1 0h1m2 0h2m2 0h2m2 0h1m1 0h1m1 0h1m1 0h6m2 0h2M0 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m10 0h1m1 0h5M0 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m1 0h3m4 0h2m1 0h6M0 31.5h1m5 0h1m3 0h2m6 0h1m4 0h1m2 0h3m1 0h1M0 32.5h7m1 0h1m1 0h1m2 0h1m1 0h2m1 0h3m3 0h7m1 0h1"/></svg>
-                </div>
+                <div class="qr">{{{digitalLink.qrSvg}}}</div>
                 <div class="digital-link-copy"><strong>Scanned via GS1 Digital Link</strong><span>Global Standards. Trusted Products.</span></div>
-                <a href="#gs1" class="learn-link">Learn more about GS1 <i class="bi bi-arrow-right"></i></a>
+                <a href="{{digitalLink.learnMoreUrl}}" class="learn-link">Learn more about GS1 <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -115,31 +108,25 @@
     <section class="story-section" id="gs1">
       <div class="container-fluid page-shell">
         <!-- Desktop / tablet story grid -->
-        <div class="story-grid">
+        <div class="story-grid{{^story.cards}} story-grid--no-cards{{/story.cards}}">
           <article class="story-intro">
-            <h2>A Healthier Tomorrow</h2>
-            <p>At Zareeva, we believe small choices make a big difference. Our products are thoughtfully formulated with natural ingredients, so you can care for yourself and the planet — together.</p>
-            <a class="dark-button" href="#story">Discover Our Story <i class="bi bi-arrow-right"></i></a>
+            <h2>{{story.title}}</h2>
+            <p>{{story.body}}</p>
+            <a class="dark-button" href="{{story.ctaUrl}}">{{story.ctaLabel}} <i class="bi bi-arrow-right"></i></a>
           </article>
-          <a class="story-card" href="#story">
-            <div class="card-image image-leaf"></div>
-            <div class="story-card-body"><h3>Naturally<br>Derived Ingredients</h3><p>Gentle, effective and kind to your skin.</p></div>
+          {{#story.cards}}
+          <a class="story-card" href="{{url}}">
+            <div class="card-image" style="background-image:url('{{imageUrl}}')"></div>
+            <div class="story-card-body"><h3>{{{title}}}</h3><p>{{text}}</p></div>
           </a>
-          <a class="story-card" href="#story">
-            <div class="card-image image-water"></div>
-            <div class="story-card-body"><h3>Thoughtful<br>Formulations</h3><p>Clean ingredients for everyday care.</p></div>
-          </a>
-          <a class="story-card" href="#story">
-            <div class="card-image image-planet"></div>
-            <div class="story-card-body"><h3>A Healthier<br>Planet</h3><p>Sustainable choices for future generations.</p></div>
-          </a>
+          {{/story.cards}}
         </div>
 
         <!-- Mobile: single dark CTA card -->
-        <a class="story-mobile-card d-sm-none" href="#story">
+        <a class="story-mobile-card d-sm-none" href="{{story.ctaUrl}}" style="background-image:linear-gradient(90deg, rgba(6,41,29,.96) 0%, rgba(6,41,29,.82) 55%, rgba(6,41,29,.35) 100%), url('{{story.mobileImageUrl}}')">
           <div class="story-mobile-copy">
-            <h2>A Cleaner Tomorrow</h2>
-            <p>Thoughtfully made. Better for you and the planet.</p>
+            <h2>{{story.mobileTitle}}</h2>
+            <p>{{story.mobileText}}</p>
           </div>
           <i class="bi bi-chevron-right"></i>
         </a>
@@ -157,8 +144,8 @@
           <span class="d-none d-sm-inline">|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Cookie Policy"><span class="d-none d-sm-inline">Cookie Policy</span><span class="d-sm-none">Cookies</span></a>
           <span class="d-none d-sm-inline">|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Contact Us"><span class="d-none d-sm-inline">Contact Us</span><span class="d-sm-none">Contact</span></a>
         </nav>
-        <div class="socials d-none d-sm-flex" aria-label="Social media"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></div>
-        <div class="copyright">© 2024 Zareeva Track. All rights reserved.</div>
+        <div class="socials d-none d-sm-flex" aria-label="Social media">{{#socials}}<a href="{{url}}" aria-label="{{name}}"><i class="bi {{icon}}"></i></a>{{/socials}}</div>
+        <div class="copyright">© {{year}} Zareeva Track. All rights reserved.</div>
       </div>
     </div>
   </footer>

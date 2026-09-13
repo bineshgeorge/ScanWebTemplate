@@ -1,20 +1,30 @@
-# Zareeva Track — GS1 Consumer Scan Template
+# ScanWebTemplate
 
-A from-scratch, mobile-first Bootstrap 5 implementation based on the supplied Zareeva Track UI reference.
+Consumer landing page for a GS1 Digital Link scan on Zareeva Track. Static HTML, Bootstrap 5.3, no build step.
 
-## Included
+## Files
 
-- Responsive consumer product verification page
-- Mobile-first layout with compact header and legal footer
-- GS1 verification banner and Digital Link panel
-- Product identity, variant, batch, manufacture and origin data
-- Responsive benefits and storytelling cards
-- Help, language and legal modal interactions
-- Bootstrap 5.3 + Bootstrap Icons
-- Custom CSS with desktop and phone breakpoints
+| File | Purpose |
+|---|---|
+| `index.html` | Rendered sample using the NATURA placeholder brand. Open this to review the design. |
+| `template.html` | Same markup with mustache-style placeholders. This is what the developer implements. |
+| `product.sample.json` | The data contract that fills `template.html`. One object per scanned GTIN. |
+| `states.html` | The three verification banner states side by side. |
+| `css/styles.css`, `js/app.js` | Shared assets. |
 
-## Run
+## Chrome vs content
 
-Open `index.html` directly in a browser or serve the repository with any static web server.
+Zareeva Track owns: header, language selector, verified banner, GS1 Digital Link card, footer legal links and copyright.
 
-The page intentionally uses remote Unsplash imagery for the visual treatment; replace those URLs with your production product and editorial assets when connecting real GS1 data.
+The brand supplies everything else per GTIN: hero image and copy, product name/variant/description, benefits, detail rows, story block, story cards, mobile CTA card, social links. See `product.sample.json`.
+
+## Layout rules
+
+- Benefits and story cards are count-tolerant. Any number renders; 3 to 5 benefits and 0 to 4 cards look right. Beyond that, wrap the request in a design review.
+- Verification has three states: `verified` (no modifier), `unverified` (`verified-banner--unverified`), `failed` (`verified-banner--failed`). Copy for each is in `_verificationStates` in the sample JSON.
+- Mobile (< 576px) is a different layout, not a squeezed desktop: inset hero with no copy overlay, Product Details behind an accordion, single dark CTA card, short footer labels.
+- `bi-leaf` does not exist in Bootstrap Icons. Leaf icons are inline SVG symbols at the top of the page.
+
+## Placeholders
+
+Hero, thumbnails and the mobile CTA background are Unsplash placeholders. NATURA is a placeholder brand.
