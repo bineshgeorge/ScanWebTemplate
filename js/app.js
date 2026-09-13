@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Modules: all collapsed on mobile/tablet, first open on desktop (tab rail needs one panel).
+  if (window.innerWidth < 1200) {
+    document.querySelectorAll('.module-panel.show').forEach(pnl => {
+      pnl.classList.remove('show');
+      const btn = document.querySelector(`[data-bs-target="#${pnl.id}"]`);
+      btn?.classList.add('collapsed');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  }
+
   // Gallery thumbnails.
   const main = document.getElementById('galleryMain');
   document.querySelectorAll('.thumb').forEach(t => {
