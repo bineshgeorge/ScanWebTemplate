@@ -1,21 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const legalModal = document.getElementById('legalModal');
-  const legalText = document.getElementById('legalText');
-  const legalLabel = document.getElementById('legalModalLabel');
-
-  document.querySelectorAll('[data-legal]').forEach(link => {
-    link.addEventListener('click', () => {
-      const title = link.dataset.legal || 'Information';
-      legalLabel.textContent = title;
-      legalText.textContent = `${title} content can be connected to your production policy pages. This demonstration keeps the consumer journey self-contained.`;
+  // Info modal: title from data-info, body is a placeholder until pages are connected.
+  const label = document.getElementById('infoModalLabel');
+  const text = document.getElementById('infoText');
+  document.querySelectorAll('[data-info]').forEach(el => {
+    el.addEventListener('click', () => {
+      label.textContent = el.dataset.info;
+      text.textContent = `${el.dataset.info}: connect to the production page.`;
     });
   });
 
+  // Language selector (visual only; production should reload with locale).
   document.querySelectorAll('.language-menu .dropdown-item').forEach(item => {
     item.addEventListener('click', () => {
       document.querySelector('.language-menu .active')?.classList.remove('active');
       item.classList.add('active');
-      document.querySelector('.language-btn span').textContent = item.textContent.trim().slice(0, 2).toUpperCase();
+      const btn = document.querySelector('.language-btn');
+      btn.querySelector('span').textContent = item.lang.toUpperCase();
+      btn.setAttribute('aria-label', `Language: ${item.textContent.trim()}`);
+    });
+  });
+
+  // Gallery thumbnails.
+  const main = document.getElementById('galleryMain');
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      const prev = document.querySelector('.thumb.active');
+      prev?.classList.remove('active');
+      prev?.setAttribute('aria-pressed', 'false');
+      t.classList.add('active');
+      t.setAttribute('aria-pressed', 'true');
+      if (main) main.src = t.dataset.src;
     });
   });
 });

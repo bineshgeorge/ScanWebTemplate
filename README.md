@@ -1,30 +1,29 @@
 # ScanWebTemplate
 
-Consumer landing page for a GS1 Digital Link scan on Zareeva Track. Static HTML, Bootstrap 5.3, no build step.
+Zareeva Track consumer verification page. Built to the UI/UX design brief: one shell, many product categories, ten verification states. HTML5, Bootstrap 5.3, Bootstrap Icons, CSS variables, minimal JS. Mobile first.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| `index.html` | Rendered sample using the NATURA placeholder brand. Open this to review the design. |
-| `template.html` | Same markup with mustache-style placeholders. This is what the developer implements. |
-| `product.sample.json` | The data contract that fills `template.html`. One object per scanned GTIN. |
-| `states.html` | The three verification banner states side by side. |
-| `css/styles.css`, `js/app.js` | Shared assets. |
+| `index.html` | Verified state with a sample product (SoundMax headphones, placeholder). |
+| `invalid.html` | Invalid Code state with guidance, Try Again / Report, support. |
+| `states.html` | All ten status states rendered from one component. |
+| `product.sample.json` | Data contract the renderer consumes. `fields[]` and `sections[]` are dynamic; `_states` maps status to copy, icon, colour and body layout. |
+| `css/styles.css` | Tokens at the top (`--zt-*`). Everything below uses them. |
+| `js/app.js` | Modal titles, language selector, gallery thumbnails. Nothing else. |
 
-## Chrome vs content
+## Rules that came from the brief
 
-Zareeva Track owns: header, language selector, verified banner, GS1 Digital Link card, footer legal links and copyright.
-
-The brand supplies everything else per GTIN: hero image and copy, product name/variant/description, benefits, detail rows, story block, story cards, mobile CTA card, social links. See `product.sample.json`.
-
-## Layout rules
-
-- Benefits and story cards are count-tolerant. Any number renders; 3 to 5 benefits and 0 to 4 cards look right. Beyond that, wrap the request in a design review.
-- Verification has three states: `verified` (no modifier), `unverified` (`verified-banner--unverified`), `failed` (`verified-banner--failed`). Copy for each is in `_verificationStates` in the sample JSON.
-- Mobile (< 576px) is a different layout, not a squeezed desktop: inset hero with no copy overlay, Product Details behind an accordion, single dark CTA card, short footer labels.
-- `bi-leaf` does not exist in Bootstrap Icons. Leaf icons are inline SVG symbols at the top of the page.
+- Colour is semantic. Primary `#062F2B`, success `#159447`, warning `#D99000`, error `#D9232E`, info `#2563A8`. No decorative colour, no gradients, no category motifs.
+- The status component is one block with a modifier: `.status.status--verified`, `.status--invalid`, etc. Never build a second banner style.
+- Fields and modules are data-driven. The UI has no product schema. Render what `fields[]` and `sections[]` contain, nothing else.
+- Modules are a Bootstrap accordion on mobile and a tab rail plus single panel from 1200px, same markup.
+- Mobile hierarchy: image, status, product name, key fields, modules, promo, GS1, footer. Desktop is image left, status and data right.
+- Header stays lightweight. Mobile: brand, Help, language. Desktop adds How It Works and About. No hamburger.
+- Copy avoids "genuine" guarantees the service cannot substantiate. "Verified using GS1 standards" is the ceiling.
+- WCAG 2.1 AA targets: 44px touch targets on buttons, visible focus, `role="status"` / `role="alert"` on the banner, icons `aria-hidden` with text carrying meaning.
 
 ## Placeholders
 
-Hero, thumbnails and the mobile CTA background are Unsplash placeholders. NATURA is a placeholder brand.
+Product images are Unsplash. SoundMax is a placeholder brand. The GS1 badge is a generic icon; the GS1 logo needs GS1 licensing before use.

@@ -3,29 +3,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zareeva Track | Verification banner states</title>
+  <title>Zareeva Track | Verification states</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <style>body{padding:32px;background:#fff} .demo{max-width:640px} .demo h6{color:#747d8a;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}</style>
+  <style>
+    body { background: var(--zt-bg); padding: 24px; }
+    .state-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; max-width: 1440px; margin: 0 auto; }
+    .state-card { background: var(--zt-surface); border: 1px solid var(--zt-line); border-radius: var(--zt-radius); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .state-key { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--zt-muted); font-family: ui-monospace, monospace; }
+    .state-card .status h1 { font-size: 16px; }
+    .state-help { text-align: center; font-size: 12px; color: var(--zt-info); font-weight: 600; }
+    h2.page-title { max-width: 1440px; margin: 0 auto 16px; font-size: 18px; font-weight: 600; }
+  </style>
 </head>
 <body>
-  <div class="demo">
-    <h6>verified (default)</h6>
-    <div class="verified-banner">
-      <div class="verified-icon"><i class="bi bi-shield-check"></i></div>
-      <div><strong>Original Product</strong><span>This product is genuine and has been verified using GS1 standards.</span></div>
+  <h2 class="page-title">Verification states. One component, ten modifiers.</h2>
+  <div class="state-grid">
+    <div class="state-card">
+      <div class="state-key">loading</div>
+      <div class="status status--loading" role="status">
+        <div class="status-icon" aria-hidden="true"><span class="status-spinner"></span></div>
+        <div><h1>Checking your product…</h1><p>Please wait while we verify your product using GS1 standards.</p></div>
+      </div>
+      <a class="state-help" href="#">Need Help?</a>
     </div>
-    <h6>unverified (resolver down, code not yet activated, etc.)</h6>
-    <div class="verified-banner verified-banner--unverified">
-      <div class="verified-icon"><i class="bi bi-shield-exclamation"></i></div>
-      <div><strong>Verification Unavailable</strong><span>We could not verify this code right now. Please try again later or contact the brand.</span></div>
+    <div class="state-card">
+      <div class="state-key">verified</div>
+      <div class="status status--verified" role="status">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+        <div><h1>Product Verified</h1><p>This product identity has been successfully verified using GS1 standards.</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">View Product Details</a>
+      <a class="state-help" href="#">Need Help?</a>
     </div>
-    <h6>failed (unknown, revoked or duplicate code)</h6>
-    <div class="verified-banner verified-banner--failed">
-      <div class="verified-icon"><i class="bi bi-shield-x"></i></div>
-      <div><strong>Not Recognised</strong><span>This code is not recognised by Zareeva Track. The product may not be genuine. Contact the brand before use.</span></div>
+    <div class="state-card">
+      <div class="state-key">not-found</div>
+      <div class="status status--not-found" role="status">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-search"></i></div>
+        <div><h1>Product Not Found</h1><p>We couldn't find product information for this code. It may be unregistered or incorrect.</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">Try Again</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">invalid</div>
+      <div class="status status--invalid" role="alert">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-x-lg"></i></div>
+        <div><h1>Invalid Code</h1><p>The QR code or link is not valid. Please check the code and try again.</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">Scan Again</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">unable</div>
+      <div class="status status--unable" role="alert">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-exclamation-lg"></i></div>
+        <div><h1>Unable to Verify</h1><p>We found product information but we are unable to complete verification at this time. Please try again later.</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">Try Again</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">alert</div>
+      <div class="status status--alert" role="alert">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-shield-exclamation"></i></div>
+        <div><h1>Verification Alert</h1><p>This product identifier has unusual scan activity and may not be genuine.</p></div>
+      </div>
+      <a class="btn-error btn-sm btn-block" href="#">Learn More</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">duplicate</div>
+      <div class="status status--duplicate" role="status">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-info-lg"></i></div>
+        <div><h1>Code Scanned Before</h1><p>This product code has already been scanned. First scanned on 15 Jul 2024, 10:24 AM (Singapore).</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">View Scan History</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">recalled</div>
+      <div class="status status--recalled" role="alert">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-exclamation-triangle"></i></div>
+        <div><h1>Product Recall</h1><p>This product is subject to a recall. Please do not use this product.</p></div>
+      </div>
+      <a class="btn-error btn-sm btn-block" href="#">View Recall Details</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">expired</div>
+      <div class="status status--expired" role="alert">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-calendar-x"></i></div>
+        <div><h1>Product Expired</h1><p>This product has passed its use-by date. For your safety, please do not use this product.</p></div>
+      </div>
+      <a class="btn-error btn-sm btn-block" href="#">View Details</a>
+      <a class="state-help" href="#">Need Help?</a>
+    </div>
+    <div class="state-card">
+      <div class="state-key">unavailable</div>
+      <div class="status status--unavailable" role="status">
+        <div class="status-icon" aria-hidden="true"><i class="bi bi-cloud-slash"></i></div>
+        <div><h1>Service Unavailable</h1><p>We're unable to verify products at the moment. Please try again later.</p></div>
+      </div>
+      <a class="btn-dark btn-sm btn-block" href="#">Try Again</a>
+      <a class="state-help" href="#">Need Help?</a>
     </div>
   </div>
 </body>

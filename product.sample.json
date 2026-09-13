@@ -1,71 +1,59 @@
 {
+  "status": "verified",
   "locale": "en",
-  "year": 2024,
-  "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1400&q=88",
-    "imageAlt": "NATURA botanical hand wash on a stone plinth",
-    "headline": "Good<br>Choices<br>Go Further",
-    "tagline": "People.<br>Products.<br>A Healthier Planet."
-  },
-  "verification": {
-    "status": "verified",
-    "modifier": "",
-    "icon": "bi-shield-check",
-    "title": "Original Product",
-    "message": "This product is genuine and has been verified using GS1 standards."
-  },
   "product": {
+    "brand": "SoundMax",
+    "name": "Wireless Headphones",
+    "category": "electronics",
+    "tagline": "Premium sound for a more connected world.",
     "gtin": "09506000134352",
-    "brand": "NATURA",
-    "name": "Botanical Hand Wash",
-    "variant": "Green Tea & Aloe Vera",
-    "netContent": "300 mL",
-    "description": "A gentle, plant-based hand wash infused with natural botanicals to cleanse and refresh, leaving your hands feeling soft, healthy and naturally cared for."
+    "model": "ZX-1000",
+    "serial": "SN8X2407",
+    "batch": "B3K2407",
+    "manufactureDate": "2024-07-15",
+    "expiryDate": null,
+    "countryOfOrigin": "Singapore",
+    "images": ["https://.../main.jpg", "https://.../2.jpg", "https://.../3.jpg"]
   },
-  "benefits": [
-    { "icon": "<svg><use href=\"#ico-leaf\"/></svg>", "label": "Plant-based<br>Formula" },
-    { "icon": "<i class=\"bi bi-droplet\"></i>", "label": "Gentle on<br>Skin" },
-    { "icon": "<svg><use href=\"#ico-leaf-fill\"/></svg>", "label": "Environmentally<br>Conscious" },
-    { "icon": "<i class=\"bi bi-heart\"></i>", "label": "Everyday<br>Care" }
-  ],
-  "details": [
-    { "label": "GTIN (Product Code)", "value": "09506000134352" },
-    { "label": "Brand", "value": "NATURA" },
-    { "label": "Product", "value": "Botanical Hand Wash" },
-    { "label": "Variant", "value": "Green Tea & Aloe Vera" },
-    { "label": "Net Content", "value": "300 mL" },
-    { "label": "Batch/Lot No.", "value": "B3K2407" },
+  "fields": [
+    { "label": "Brand", "value": "SoundMax" },
+    { "label": "Product", "value": "Wireless Headphones" },
+    { "label": "Model", "value": "ZX-1000" },
+    { "label": "GTIN", "value": "09506000134352" },
+    { "label": "Serial No.", "value": "SN8X2407" },
+    { "label": "Batch / Lot No.", "value": "B3K2407" },
     { "label": "Manufacture Date", "value": "15 Jul 2024" },
     { "label": "Country of Origin", "value": "Singapore" }
   ],
-  "digitalLink": {
-    "url": "https://id.zareeva.com/01/09506000134352/10/B3K2407",
-    "qrSvg": "<svg class=\"qr-svg\" ...>server-rendered QR of digitalLink.url</svg>",
-    "learnMoreUrl": "https://www.gs1.org/standards/gs1-digital-link"
-  },
-  "story": {
-    "title": "A Healthier Tomorrow",
-    "body": "At Zareeva, we believe small choices make a big difference. Our products are thoughtfully formulated with natural ingredients, so you can care for yourself and the planet, together.",
-    "ctaLabel": "Discover Our Story",
-    "ctaUrl": "#story",
-    "mobileTitle": "A Cleaner Tomorrow",
-    "mobileText": "Thoughtfully made. Better for you and the planet.",
-    "mobileImageUrl": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=82",
-    "cards": [
-      { "title": "Naturally<br>Derived Ingredients", "text": "Gentle, effective and kind to your skin.", "imageUrl": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=700&q=82", "url": "#story" },
-      { "title": "Thoughtful<br>Formulations", "text": "Clean ingredients for everyday care.", "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=82", "url": "#story" },
-      { "title": "A Healthier<br>Planet", "text": "Sustainable choices for future generations.", "imageUrl": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=82", "url": "#story" }
-    ]
-  },
-  "socials": [
-    { "name": "Instagram", "icon": "bi-instagram", "url": "#" },
-    { "name": "Facebook", "icon": "bi-facebook", "url": "#" },
-    { "name": "YouTube", "icon": "bi-youtube", "url": "#" },
-    { "name": "LinkedIn", "icon": "bi-linkedin", "url": "#" }
+  "sections": [
+    { "id": "product-details", "title": "Product Details", "fields": "same shape as fields[]",
+      "side": { "icon": "bi-headphones", "title": "Key Features", "items": ["Active Noise Cancellation", "Up to 40 hours battery life", "Bluetooth 5.3"] } },
+    { "id": "specifications", "title": "Specifications", "fields": [] },
+    { "id": "warranty", "title": "Warranty & Support", "html": "<p>…</p>" },
+    { "id": "sustainability", "title": "Sustainability", "html": "<p>…</p>" }
   ],
-  "_verificationStates": {
-    "verified":   { "modifier": "",           "icon": "bi-shield-check",       "title": "Original Product",         "message": "This product is genuine and has been verified using GS1 standards." },
-    "unverified": { "modifier": "unverified", "icon": "bi-shield-exclamation", "title": "Verification Unavailable", "message": "We could not verify this code right now. Please try again later or contact the brand." },
-    "failed":     { "modifier": "failed",     "icon": "bi-shield-x",           "title": "Not Recognised",           "message": "This code is not recognised by Zareeva Track. The product may not be genuine. Contact the brand before use." }
+  "actions": {
+    "primary": { "label": "View Product Details", "href": "#modules" },
+    "secondary": { "label": "Register Warranty", "href": "https://brand.example/warranty", "external": true }
+  },
+  "promo": { "title": "A Smarter Tomorrow", "text": "Through Trusted Products.", "icon": "bi-lightbulb", "href": "https://brand.example/story" },
+  "digitalLink": { "url": "https://id.zareeva.com/01/09506000134352/21/SN8X2407", "learnMoreUrl": "https://www.gs1.org/standards/gs1-digital-link" },
+  "_notes": {
+    "fields": "Renderer prints fields[] as given. No universal schema in the UI. Pharma sends Dosage Form / Strength / Expiry; lubricant sends Viscosity / Volume / OEM approvals.",
+    "sections": "Only render sections present. Known ids: product-details, specifications, ingredients, certifications, warranty, safety, regulatory, sustainability, supply-chain, provenance, documents, patient-information, recall, brand.",
+    "promo": "Brand-supplied. Mobile only. Desktop shows the platform story block.",
+    "status": "One of the keys in _states. Drives status component modifier, icon, headline, message, primary action, and which body layout renders (product vs guidance)."
+  },
+  "_states": {
+    "loading":     { "headline": "Checking your product…", "message": "Please wait while we verify your product using GS1 standards.", "icon": "spinner", "colour": "info", "primary": null, "body": "none" },
+    "verified":    { "headline": "Product Verified", "message": "This product identity has been successfully verified using GS1 standards.", "icon": "bi-shield-check", "colour": "success", "primary": "View Product Details", "body": "product" },
+    "not-found":   { "headline": "Product Not Found", "message": "We couldn't find product information for this code. It may be unregistered or incorrect.", "icon": "bi-search", "colour": "neutral", "primary": "Try Again", "body": "guidance" },
+    "invalid":     { "headline": "Invalid Code", "message": "The QR code or link is not valid. Please check the code and try again.", "icon": "bi-x-lg", "colour": "error", "primary": "Scan Again", "secondary": "Report This Product", "body": "guidance" },
+    "unable":      { "headline": "Unable to Verify", "message": "We found product information but we are unable to complete verification at this time. Please try again later.", "icon": "bi-exclamation-lg", "colour": "warning", "primary": "Try Again", "body": "product" },
+    "alert":       { "headline": "Verification Alert", "message": "This product identifier has unusual scan activity and may not be genuine.", "icon": "bi-shield-exclamation", "colour": "error", "primary": "Learn More", "secondary": "Report This Product", "body": "guidance" },
+    "duplicate":   { "headline": "Code Scanned Before", "message": "This product code has already been scanned. First scanned on {firstScanAt}.", "icon": "bi-info-lg", "colour": "info", "primary": "View Scan History", "body": "product" },
+    "recalled":    { "headline": "Product Recall", "message": "This product is subject to a recall. Please do not use this product.", "icon": "bi-exclamation-triangle", "colour": "error", "primary": "View Recall Details", "body": "product" },
+    "expired":     { "headline": "Product Expired", "message": "This product has passed its use-by date. For your safety, please do not use this product.", "icon": "bi-calendar-x", "colour": "error", "primary": "View Details", "body": "product" },
+    "unavailable": { "headline": "Service Unavailable", "message": "We're unable to verify products at the moment. Please try again later.", "icon": "bi-cloud-slash", "colour": "neutral", "primary": "Try Again", "body": "none" }
   }
 }

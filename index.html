@@ -3,172 +3,171 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zareeva Track. A consumer-first GS1 Digital Link product experience.">
-  <title>Zareeva Track | Product Verification</title>
+  <meta name="description" content="Zareeva Track. Product verification via GS1 Digital Link.">
+  <title>Zareeva Track | Product Verified</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Rendered sample. NATURA is a placeholder brand. The data-driven version is template.html + product.sample.json. -->
-  <!-- Inline SVG symbols. Bootstrap Icons has no leaf glyph, so the two leaf benefits use these. -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="ico-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 20c0-7 4-13 14-15 1 8-3 14-10 14-1.4 0-2.7-.3-4 1"/>
-      <path d="M5 20c2-5 5-8 9-10"/>
-    </symbol>
-    <symbol id="ico-leaf-fill" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19.4 4.2C9.3 5.6 5 11.6 5 19.2c0 .3.2.5.5.5 3.6-3.7 7.4-6.5 11.2-8.4-3.7 2.6-7.3 5.8-10.2 9 .5.4 1.5.7 2.5.7 7.6 0 11.8-6.4 10.9-16.3a.5.5 0 0 0-.5-.5z"/>
-    </symbol>
-  </svg>
-
+  <div class="page-frame">
   <header class="site-header">
-    <div class="container-fluid page-shell">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Zareeva Track home">
-          <span class="brand-name">ZAREEVA</span>
-          <span class="brand-track">TRACK</span>
-        </a>
-        <div class="header-tools">
-          <button class="header-link" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
-          <span class="divider" aria-hidden="true"></span>
-          <div class="dropdown">
-            <button class="header-link language-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-globe2"></i><span>EN</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end language-menu">
-              <li><button class="dropdown-item active" type="button">English</button></li>
-              <li><button class="dropdown-item" type="button">中文</button></li>
-              <li><button class="dropdown-item" type="button">Bahasa Melayu</button></li>
-            </ul>
-          </div>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Zareeva Track home"><span class="brand-name">ZAREEVA</span><span class="brand-track">TRACK</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-desktop-only" href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="How It Works">How It Works</a>
+        <a class="nav-desktop-only" href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="About">About</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Help">Help</a>
+        <span class="divider" aria-hidden="true"></span>
+        <div class="dropdown">
+          <button class="header-link language-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language: English"><i class="bi bi-globe2" aria-hidden="true"></i><span>EN</span></button>
+          <ul class="dropdown-menu dropdown-menu-end language-menu">
+            <li><button class="dropdown-item active" type="button" lang="en">English</button></li>
+            <li><button class="dropdown-item" type="button" lang="zh">中文</button></li>
+            <li><button class="dropdown-item" type="button" lang="ms">Bahasa Melayu</button></li>
+          </ul>
         </div>
-        <div class="header-message d-none d-lg-block">SCAN TODAY<br>FOR A BRIGHTER<br>TOMORROW</div>
-      </div>
+      </nav>
+      <div class="header-message d-none d-lg-block">ONE SCAN.<br>A MORE TRUSTED TOMORROW.</div>
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
+    <!-- Sample content. SoundMax is a placeholder brand. Fields and modules are data-driven; see product.sample.json. -->
     <section class="product-stage">
-      <div class="container-fluid page-shell">
-        <div class="row g-0 product-grid">
-          <div class="col-lg-6 hero-visual">
-            <div class="hero-copy d-none d-sm-block">
-              <h1>Good<br>Choices<br><em>Go Further</em></h1>
-              <span class="hero-rule"></span>
-              <p>People.<br>Products.<br>A Healthier Planet.</p>
-            </div>
-            <div class="hero-photo" role="img" aria-label="NATURA botanical hand wash on a stone plinth"></div>
-          </div>
+      <div class="gallery">
+        <div class="gallery-main"><img id="galleryMain" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85" alt="SoundMax Wireless Headphones"></div>
+        <div class="gallery-thumbs" aria-label="Product images">
+          <button class="thumb active" type="button" aria-pressed="true" aria-label="Image 1" data-src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=200&q=70" alt=""></button>
+          <button class="thumb" type="button" aria-pressed="false" aria-label="Image 2" data-src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1000&q=85"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=200&q=70" alt=""></button>
+          <button class="thumb" type="button" aria-pressed="false" aria-label="Image 3" data-src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=85"><img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=200&q=70" alt=""></button>
+          <button class="thumb" type="button" aria-pressed="false" aria-label="Image 4" data-src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1000&q=85"><img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=200&q=70" alt=""></button>
+        </div>
+      </div>
 
-          <div class="col-lg-6 product-panel">
-            <div class="verified-banner">
-              <div class="verified-icon"><i class="bi bi-shield-check"></i></div>
-              <div><strong>Original Product</strong><span>This product is genuine and has been verified using GS1 standards.</span></div>
-            </div>
+      <div class="product-panel">
+        <div class="status status--verified" role="status">
+          <div class="status-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+          <div><h1>Product Verified</h1><p>This product identity has been successfully verified using GS1 standards.</p></div>
+        </div>
 
-            <div class="product-copy">
-              <h2>NATURA Botanical Hand Wash</h2>
-              <div class="product-subtitle">Green Tea &amp; Aloe Vera <span>•</span> 300 mL</div>
-              <p class="product-description">A gentle, plant-based hand wash infused with natural botanicals to cleanse and refresh, leaving your hands feeling soft, healthy and naturally cared for.</p>
-            </div>
-
-            <div class="benefits">
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><svg><use href="#ico-leaf"/></svg></div><span>Plant-based<br>Formula</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><i class="bi bi-droplet"></i></div><span>Gentle on<br>Skin</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><svg><use href="#ico-leaf-fill"/></svg></div><span>Environmentally<br>Conscious</span></div></div>
-              <div class="benefit-item"><div class="benefit"><div class="benefit-icon"><i class="bi bi-heart"></i></div><span>Everyday<br>Care</span></div></div>
-            </div>
-
-            <!-- Desktop: always open. Mobile: collapsed behind the "Product Details" bar. -->
-            <button class="details-toggle d-sm-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#productDetails" aria-expanded="false" aria-controls="productDetails">
-              Product Details <i class="bi bi-chevron-down"></i>
-            </button>
-            <div id="productDetails" class="collapse details-collapse">
-              <div class="details-list">
-                <div class="detail-row"><span>GTIN (Product Code)</span><strong>09506000134352</strong></div>
-                <div class="detail-row"><span>Brand</span><strong>NATURA</strong></div>
-                <div class="detail-row"><span>Product</span><strong>Botanical Hand Wash</strong></div>
-                <div class="detail-row"><span>Variant</span><strong>Green Tea &amp; Aloe Vera</strong></div>
-                <div class="detail-row"><span>Net Content</span><strong>300 mL</strong></div>
-                <div class="detail-row"><span>Batch/Lot No.</span><strong>B3K2407</strong></div>
-                <div class="detail-row"><span>Manufacture Date</span><strong>15 Jul 2024</strong></div>
-                <div class="detail-row"><span>Country of Origin</span><strong>Singapore</strong></div>
-              </div>
-
-              <div class="digital-link-card">
-                <div class="qr">
-                  <svg class="qr-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h33v33H0z"/><path stroke="#132321" d="M0 0.5h7m1 0h1m1 0h2m1 0h6m2 0h1m4 0h7M0 1.5h1m5 0h1m4 0h2m3 0h1m3 0h1m3 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m3 0h1m3 0h1m1 0h2m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m5 0h1m2 0h1m3 0h1m6 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h1m1 0h1m3 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h3m2 0h3m2 0h2m1 0h1m1 0h1m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 7.5h3m1 0h3m2 0h2M0 8.5h1m1 0h1m3 0h2m1 0h3m1 0h2m3 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1M1 9.5h3m1 0h1m1 0h1m1 0h5m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m2 0h1M1 10.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m3 0h2m4 0h3M0 11.5h2m2 0h2m2 0h3m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1M2 12.5h1m2 0h2m1 0h1m2 0h3m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1M0 13.5h1m1 0h1m4 0h3m1 0h2m4 0h1m13 0h2M0 14.5h4m2 0h1m2 0h2m2 0h3m3 0h1m1 0h1m1 0h2m5 0h1m1 0h1M1 15.5h4m2 0h1m3 0h3m4 0h1m3 0h5m1 0h1M0 16.5h2m3 0h2m2 0h2m3 0h2m2 0h3m5 0h2m1 0h3M0 17.5h4m3 0h1m2 0h1m1 0h2m1 0h1m2 0h3m2 0h2m1 0h1m2 0h1m1 0h1M0 18.5h1m2 0h1m1 0h2m3 0h1m3 0h11m2 0h1m1 0h2m1 0h1M0 19.5h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h2m3 0h3m1 0h3m1 0h1m1 0h2m1 0h1M0 20.5h2m1 0h1m1 0h3m1 0h2m4 0h4m1 0h3m1 0h4m4 0h1M2 21.5h2m4 0h1m3 0h2m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m6 0h1M0 22.5h3m2 0h2m4 0h1m1 0h1m2 0h3m1 0h2m1 0h3m1 0h3m2 0h1M3 23.5h2m2 0h2m2 0h2m1 0h3m2 0h2m1 0h2m1 0h1m3 0h2m1 0h1M0 24.5h3m1 0h1m1 0h5m1 0h1m1 0h1m3 0h1m1 0h1m3 0h5m2 0h1M8 25.5h1m3 0h3m2 0h3m1 0h2m1 0h1m3 0h1m2 0h1M0 26.5h7m1 0h1m1 0h4m1 0h1m3 0h1m4 0h1m1 0h1m1 0h5M0 27.5h1m5 0h1m2 0h3m1 0h1m1 0h3m3 0h1m2 0h1m3 0h2M0 28.5h1m1 0h3m1 0h1m2 0h2m2 0h2m2 0h1m1 0h1m1 0h1m1 0h6m2 0h2M0 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m10 0h1m1 0h5M0 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m1 0h3m4 0h2m1 0h6M0 31.5h1m5 0h1m3 0h2m6 0h1m4 0h1m2 0h3m1 0h1M0 32.5h7m1 0h1m1 0h1m2 0h1m1 0h2m1 0h3m3 0h7m1 0h1"/></svg>
-                </div>
-                <div class="digital-link-copy"><strong>Scanned via GS1 Digital Link</strong><span>Global Standards. Trusted Products.</span></div>
-                <a href="#gs1" class="learn-link">Learn more about GS1 <i class="bi bi-arrow-right"></i></a>
-              </div>
+        <div class="product-card">
+          <div class="product-summary">
+            <div class="product-title"><h2>SoundMax Wireless Headphones</h2><p>Premium sound for a more connected world.</p></div>
+            <div class="details-list">
+              <div class="detail-row"><span>Brand</span><strong>SoundMax</strong></div>
+              <div class="detail-row"><span>Product</span><strong>Wireless Headphones</strong></div>
+              <div class="detail-row"><span>Model</span><strong>ZX-1000</strong></div>
+              <div class="detail-row"><span>GTIN</span><strong>09506000134352</strong></div>
+              <div class="detail-row"><span>Serial No.</span><strong>SN8X2407</strong></div>
+              <div class="detail-row"><span>Batch / Lot No.</span><strong>B3K2407</strong></div>
+              <div class="detail-row"><span>Manufacture Date</span><strong>15 Jul 2024</strong></div>
+              <div class="detail-row"><span>Country of Origin</span><strong>Singapore</strong></div>
             </div>
           </div>
+          <ul class="assurances" aria-label="Platform assurances">
+            <li><span class="assure-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>Authentic Product</li>
+            <li><span class="assure-icon" aria-hidden="true"><i class="bi bi-globe2"></i></span>Global Standards</li>
+            <li><span class="assure-icon" aria-hidden="true"><i class="bi bi-link-45deg"></i></span>Trusted Supply Chain</li>
+            <li><span class="assure-icon" aria-hidden="true"><i class="bi bi-people"></i></span>Safer People</li>
+          </ul>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn-dark" href="#modules">View Product Details <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn-outline" href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Register Warranty">Register Warranty <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
 
-    <section class="story-section" id="gs1">
-      <div class="container-fluid page-shell">
-        <!-- Desktop / tablet story grid -->
-        <div class="story-grid">
-          <article class="story-intro">
-            <h2>A Healthier Tomorrow</h2>
-            <p>At Zareeva, we believe small choices make a big difference. Our products are thoughtfully formulated with natural ingredients, so you can care for yourself and the planet — together.</p>
-            <a class="dark-button" href="#story">Discover Our Story <i class="bi bi-arrow-right"></i></a>
-          </article>
-          <a class="story-card" href="#story">
-            <div class="card-image image-leaf"></div>
-            <div class="story-card-body"><h3>Naturally<br>Derived Ingredients</h3><p>Gentle, effective and kind to your skin.</p></div>
-          </a>
-          <a class="story-card" href="#story">
-            <div class="card-image image-water"></div>
-            <div class="story-card-body"><h3>Thoughtful<br>Formulations</h3><p>Clean ingredients for everyday care.</p></div>
-          </a>
-          <a class="story-card" href="#story">
-            <div class="card-image image-planet"></div>
-            <div class="story-card-body"><h3>A Healthier<br>Planet</h3><p>Sustainable choices for future generations.</p></div>
-          </a>
-        </div>
+    <!-- Brand-supplied promo card. Mobile only; desktop shows the platform story block. -->
+    <a class="promo-card" href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Brand Story">
+      <span class="promo-icon" aria-hidden="true"><i class="bi bi-lightbulb"></i></span>
+      <span class="promo-copy"><strong>A Smarter Tomorrow</strong><span>Through Trusted Products.</span></span>
+      <i class="bi bi-chevron-right" aria-hidden="true"></i>
+    </a>
 
-        <!-- Mobile: single dark CTA card -->
-        <a class="story-mobile-card d-sm-none" href="#story">
-          <div class="story-mobile-copy">
-            <h2>A Cleaner Tomorrow</h2>
-            <p>Thoughtfully made. Better for you and the planet.</p>
+    <!-- Modules. Only render those the data contains. Accordion on mobile, tab rail on desktop. -->
+    <section class="modules" id="modules" aria-label="Product information">
+      <button class="module-btn" type="button" data-bs-toggle="collapse" data-bs-target="#m-details" aria-expanded="true" aria-controls="m-details">Product Details <i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      <div class="module-panel collapse show" id="m-details" data-bs-parent="#modules">
+        <div class="panel-main">
+          <h3>Product Details</h3>
+          <div class="details-list details-list--panel">
+            <div class="detail-row"><span>GTIN (Product Code)</span><strong>09506000134352</strong></div>
+            <div class="detail-row"><span>Brand</span><strong>SoundMax</strong></div>
+            <div class="detail-row"><span>Product</span><strong>Wireless Headphones</strong></div>
+            <div class="detail-row"><span>Model</span><strong>ZX-1000</strong></div>
+            <div class="detail-row"><span>Serial Number</span><strong>SN8X2407</strong></div>
+            <div class="detail-row"><span>Batch / Lot No.</span><strong>B3K2407</strong></div>
+            <div class="detail-row"><span>Manufacture Date</span><strong>15 Jul 2024</strong></div>
+            <div class="detail-row"><span>Country of Origin</span><strong>Singapore</strong></div>
           </div>
-          <i class="bi bi-chevron-right"></i>
-        </a>
+        </div>
+        <aside class="panel-side">
+          <div class="side-icon" aria-hidden="true"><i class="bi bi-headphones"></i></div>
+          <h4>Key Features</h4>
+          <ul class="feature-list">
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Active Noise Cancellation</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Up to 40 hours battery life</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Bluetooth 5.3</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Comfortable over-ear design</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>USB-C fast charging</li>
+          </ul>
+        </aside>
       </div>
+
+      <button class="module-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m-specs" aria-expanded="false" aria-controls="m-specs">Specifications <i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      <div class="module-panel collapse" id="m-specs" data-bs-parent="#modules"><div class="panel-main"><h3>Specifications</h3><p class="panel-empty">Brand-supplied content.</p></div></div>
+
+      <button class="module-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m-warranty" aria-expanded="false" aria-controls="m-warranty">Warranty &amp; Support <i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      <div class="module-panel collapse" id="m-warranty" data-bs-parent="#modules"><div class="panel-main"><h3>Warranty &amp; Support</h3><p class="panel-empty">Brand-supplied content.</p></div></div>
+
+      <button class="module-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m-sustain" aria-expanded="false" aria-controls="m-sustain">Sustainability <i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      <div class="module-panel collapse" id="m-sustain" data-bs-parent="#modules"><div class="panel-main"><h3>Sustainability</h3><p class="panel-empty">Brand-supplied content.</p></div></div>
+    </section>
+
+    <!-- Platform copy. Desktop only; mobile shows the brand promo card instead. -->
+    <section class="story-section" aria-label="About Zareeva Track">
+      <article class="story-intro">
+        <h2>A More Trusted Tomorrow</h2>
+        <p>At Zareeva, we help create a safer, more transparent world by connecting people to authentic products. One scan makes a big difference.</p>
+        <a class="btn-dark" href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Our Mission">Our Mission <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </article>
+      <div class="story-cards">
+        <div class="story-card"><div class="story-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div><h3>Trusted Information</h3><p>Access product information with confidence.</p></div>
+        <div class="story-card"><div class="story-icon"><i class="bi bi-globe2" aria-hidden="true"></i></div><h3>Global Standards</h3><p>Built on GS1 for a more connected world.</p></div>
+        <div class="story-card"><div class="story-icon"><i class="bi bi-hand-thumbs-up" aria-hidden="true"></i></div><h3>Positive Impact</h3><p>Authentic products. Safer people. Stronger supply chains.</p></div>
+      </div>
+    </section>
+
+    <section class="gs1-card" aria-label="GS1 Digital Link">
+      <div class="gs1-badge" aria-hidden="true"><i class="bi bi-upc-scan"></i></div>
+      <div class="gs1-copy"><strong>GS1 Digital Link</strong><span>This product is identified using GS1 standards, connecting the physical product to trusted digital information.</span></div>
+      <a href="https://www.gs1.org/standards/gs1-digital-link" class="learn-link" target="_blank" rel="noopener">Learn more about GS1 <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container-fluid page-shell">
-      <div class="footer-inner">
-        <a class="brand footer-brand" href="#top"><span class="brand-name">ZAREEVA</span><span class="brand-track">TRACK</span></a>
-        <nav class="footer-links" aria-label="Legal links">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Terms and Conditions"><span class="d-none d-sm-inline">Terms and Conditions</span><span class="d-sm-none">Terms</span></a>
-          <span class="d-none d-sm-inline">|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Privacy Policy"><span class="d-none d-sm-inline">Privacy Policy</span><span class="d-sm-none">Privacy</span></a>
-          <span class="d-none d-sm-inline">|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Cookie Policy"><span class="d-none d-sm-inline">Cookie Policy</span><span class="d-sm-none">Cookies</span></a>
-          <span class="d-none d-sm-inline">|</span><a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-legal="Contact Us"><span class="d-none d-sm-inline">Contact Us</span><span class="d-sm-none">Contact</span></a>
-        </nav>
-        <div class="socials d-none d-sm-flex" aria-label="Social media"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></div>
-        <div class="copyright">© 2024 Zareeva Track. All rights reserved.</div>
-      </div>
+    <div class="footer-inner">
+      <a class="brand footer-brand" href="index.html" aria-label="Zareeva Track"><span class="brand-name">ZAREEVA</span><span class="brand-track">TRACK</span></a>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Terms and Conditions">Terms and Conditions</a><span aria-hidden="true">|</span>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Privacy Policy">Privacy Policy</a><span aria-hidden="true">|</span>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Cookie Policy">Cookie Policy</a><span aria-hidden="true">|</span>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Contact Us">Contact Us</a>
+      </nav>
+      <div class="socials"><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a></div>
+      <div class="copyright">© 2024 Zareeva Track. All rights reserved.</div>
     </div>
   </footer>
-
-  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content clean-modal"><div class="modal-header"><h2 class="modal-title" id="helpModalLabel">How Zareeva Track works</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p>Scan the GS1 Digital Link on a participating product to access trusted product information, provenance and verification details.</p><p class="mb-0">If information looks incorrect, contact the brand using the details provided on the product or its official website.</p></div></div></div>
   </div>
 
-  <div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content clean-modal"><div class="modal-header"><h2 class="modal-title" id="legalModalLabel">Information</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p id="legalText">This page is a demonstration consumer experience for Zareeva Track.</p></div></div></div>
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content clean-modal"><div class="modal-header"><h2 class="modal-title" id="infoModalLabel">Information</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><p id="infoText">Placeholder. Connect to the production page.</p></div></div></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
