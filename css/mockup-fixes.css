@@ -1,0 +1,2 @@
+@media (min-width:768px){.header-message{display:block}.nav-desktop-only{display:inline}.header-message{font-size:8px;line-height:1.55;letter-spacing:.25em;text-align:right;color:#56615f;margin-left:18px}.header-inner{gap:18px}.main-nav{margin-left:auto}.product-stage{min-height:760px}.gallery-main{box-shadow:0 18px 45px rgba(20,35,31,.06)}}
+@media (min-width:1200px){.product-stage{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr);gap:68px}.product-title h2{font-size:68px}.header-message{display:block}}
